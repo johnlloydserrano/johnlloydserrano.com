@@ -14,4 +14,7 @@ export default defineConfig({
       '@images': path.resolve(__dirname, './public/images'),
     },
   },
+  build: {
+    outDir: 'dist/src/client'
+  }
 })
