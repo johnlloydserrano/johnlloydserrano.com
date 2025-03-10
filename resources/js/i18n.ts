@@ -1,7 +1,7 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import { en } from "./locales/en";
-import { ja } from "./locales/ja";
+import { en } from "@/locales/en";
+import { ja } from "@/locales/ja";
 
 i18n.use(initReactI18next).init(
 	{
@@ -16,8 +16,8 @@ i18n.use(initReactI18next).init(
 		},
 	},
 	(err, t) => {
-		if (err) console.error("i18next initialization failed:", err);
-		else console.log("i18next initialized successfully");
+		if (err) console.error("JLS-19 : i18next initialization failed:", err);
+		else console.log("JLS-19 : i18next initialized successfully");
 	}
 );
 
