@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Acorn';
+  src: url('/fonts/acorn-8.ttf');
+  font-weight: 800; /* Set to "SemiBold" weight */
+  font-style: normal;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -65,4 +72,11 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.color-effect {
+  background: linear-gradient(120deg, var(--color-primary), var(--color-secondary));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
