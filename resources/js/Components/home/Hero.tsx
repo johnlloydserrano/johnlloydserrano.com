@@ -1,4 +1,4 @@
-const HeroSection: React.FC<Hero> = ({ name, imageUrl, headline, paragraphs }) => {
+export default function HeroSection({ name, imageUrl, headline, paragraphs }: Hero) {
     return (
         <section className="container mx-auto w-full h-full flex items-center">
             <div className="h-full">
@@ -26,5 +26,3 @@ const HeroSection: React.FC<Hero> = ({ name, imageUrl, headline, paragraphs }) =
         </section>
     );
 };
-
-export default HeroSection;
