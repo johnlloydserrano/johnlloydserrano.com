@@ -1,4 +1,4 @@
-const HeroSection: React.FC<HeroSectionProps> = ({ name, imageUrl, headline, paragraphs }) => {
+const HeroSection: React.FC<Hero> = ({ name, imageUrl, headline, paragraphs }) => {
     return (
         <section className="container mx-auto w-full h-full flex items-center">
             <div className="h-full">
