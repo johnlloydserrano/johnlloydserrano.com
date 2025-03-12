@@ -1,7 +1,7 @@
 import SectionHeader from "@/Components/layout/SectionHeader";
 import ListItem from "@/Components/layout/ListItem";
 
-type Props = {
+interface Props {
     educationData: Education[];
     workExperienceData: WorkExperience[];
 };
