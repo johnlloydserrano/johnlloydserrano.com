@@ -81,3 +81,21 @@ export const workExperienceData: WorkExperience[] = [
         period: "November 2017 – January 2018",
     },
 ];
+
+export const skillData : Skill[] = [
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+]
