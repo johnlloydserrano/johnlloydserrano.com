@@ -1,11 +1,11 @@
-interface ListItemProps {
+interface Props {
     logo: string;
     title: string;
     subtitle?: string;
     description: string;
 }
 
-const ListItem: React.FC<ListItemProps> = ({ logo, title, subtitle, description }) => {
+export default function ListItem({ logo, title, subtitle, description }: Props) {
     return (
         <div className="flex items-center py-2">
             <div className="w-1/5 pr-8 py-8 rounded-lg">
@@ -25,5 +25,3 @@ const ListItem: React.FC<ListItemProps> = ({ logo, title, subtitle, description 
         </div>
     );
 };
-
-export default ListItem;
