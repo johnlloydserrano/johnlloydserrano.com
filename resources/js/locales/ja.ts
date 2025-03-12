@@ -1,3 +1,11 @@
 export const ja = {
-    welcome: "歓迎"
+    section: {
+        title: {
+            education: "学歴",
+            workExperience: "職務経歴",
+            skill: "スキル",
+            personalProject: "個人プロジェクト",
+            achievement: "実績",
+        }
+    }
 }

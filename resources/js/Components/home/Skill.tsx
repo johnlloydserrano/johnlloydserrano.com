@@ -1,14 +1,18 @@
+import { useTranslation } from "react-i18next";
 import SectionHeader from "../layout/SectionHeader";
+import { HOME } from "@/constants/home";
 
 interface Props {
     skillData: Skill[];
 }
 
 export default function Skill({ skillData }: Props) {
+    const { t } = useTranslation();
+
     return (
         <div className="skill-wrapper">
             <div className="container mx-auto">
-                <SectionHeader title="My Skills" />
+                <SectionHeader title={t(HOME.section.title.skill)}/>
                 <div className="h-full w-full flex justify-center">
                     <div className="w-full grid grid-cols-1 gap-x-6 p-7 gap-y-6 sm:grid-cols-2 lg:grid-cols-6 xl:gap-x-6 py-6">
                         {skillData.map((skill, index) => (
