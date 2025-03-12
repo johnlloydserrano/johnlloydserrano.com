@@ -117,3 +117,22 @@ export const personalProjectData : PersonalProject[] = [
     { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
     { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
 ]
+
+export const achievementData : Achievement[] = [
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { title: 'Achievement', description: 'my-achievement-description', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+]
+
