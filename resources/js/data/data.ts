@@ -99,3 +99,21 @@ export const skillData : Skill[] = [
     { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
     { name: 'Laravel', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
 ]
+
+export const personalProjectData : PersonalProject[] = [
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+    { name: 'Laravel', slug: 'my-laravel-project-name', imageUrl: 'https://dummyimage.com/600x400/000/fff.png&text=Laravel' },
+]
