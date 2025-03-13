@@ -6,6 +6,12 @@ export const HOME = {
             skill: "section.title.skill",
             personalProject: "section.title.personalProject",
             achievement: "section.title.achievement",
+        },
+        button: {
+            linkedIn: "section.button.linkedIn",
+            skillSheet: "section.button.skillSheet",
+            work: "section.button.work",
+            project: "section.button.project",
         }
     }
 }

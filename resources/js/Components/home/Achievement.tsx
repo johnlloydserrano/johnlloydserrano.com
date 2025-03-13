@@ -1,9 +1,11 @@
 import { useTranslation } from "react-i18next";
 import SectionHeader from "../layout/SectionHeader";
 import { HOME } from "@/constants/home";
+import { motion } from "framer-motion";
+import TimelineLayout from "../layout/timeline/TimelineLayout";
 
 interface Props {
-    achievementData: Achievement[];
+    achievementData: Timeline[];
 }
 
 export default function Achievement({ achievementData }: Props) {
@@ -11,21 +13,19 @@ export default function Achievement({ achievementData }: Props) {
 
     return (
         <div className="achievement-wrapper">
-            <div className="container mx-auto">
-                <SectionHeader title={t(HOME.section.title.achievement)} />
-                <div className="h-full w-full flex justify-center">
-                    <div className="w-full grid grid-cols-1 gap-x-6 p-7 gap-y-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-6 py-6">
-                        {achievementData.map((achievement, index) => (
-                            <div className="group relative" key={index}>
-                                <div className="border shadow-sm rounded-lg bg-white relative flex flex-wrap">
-                                    <img src={achievement.imageUrl} className="object-contain p-6 w-full object-center" alt={`image of ${achievement.title}`} />
-                                    <p>{achievement.title}</p>
-                                    <p>{achievement.description}</p>
-                                </div>
-                            </div>
-                        ))}
+            <div className="container px-24 py-6 mx-auto">
+                <motion.div
+                    className="skill-box p-6"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 1, ease: "easeOut" }}
+                    viewport={{ margin: "-200px", once: true }}
+                >
+                    <SectionHeader title={t(HOME.section.title.achievement)} />
+                    <div className="h-full w-full flex justify-center items-center">
+                        <TimelineLayout timelineData={achievementData} />
                     </div>
-                </div>
+                </motion.div>
             </div>
         </div>
     )
