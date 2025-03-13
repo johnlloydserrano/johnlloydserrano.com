@@ -4,9 +4,11 @@ interface SectionHeaderProps {
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ title }) => {
     return (
-        <h2 className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-5xl color-effect tracking-normal">
-            {title}
-        </h2>
+        <div className="section-title">
+            <h2 className="p-4 font-acorn text-2xl sm:text-3xl md:text-4xl lg:text-4xl color-effect tracking-normal">
+                {title}
+            </h2>
+        </div>
     );
 };
 
