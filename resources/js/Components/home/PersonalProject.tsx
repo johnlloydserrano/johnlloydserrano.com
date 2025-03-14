@@ -7,12 +7,14 @@ import {
     CardFooter,
 } from "@/Components/ui/card"
 import { motion } from "framer-motion";
+import { PersonalProjectSkeleton } from "@/Components/layout/skeleton/HomeSkeleton";
 
 interface Props {
     personalProjectData: PersonalProject[];
+    isLoading: boolean;
 }
 
-export default function PersonalProject({ personalProjectData }: Props) {
+export default function PersonalProject({ personalProjectData, isLoading }: Props) {
     const { t } = useTranslation()
 
     return (
@@ -28,17 +30,21 @@ export default function PersonalProject({ personalProjectData }: Props) {
                     <SectionHeader title={t(HOME.section.title.personalProject)} />
                     <div className="h-full w-full flex justify-center">
                         <div className="w-full grid grid-cols-1 gap-4 p-4 sm:grid-cols-2 lg:grid-cols-3 py-6">
-                            {personalProjectData.map((personalProject, index) => (
-                                <Card className="rounded-md border shadow-none" key={index}>
-                                    <CardContent className="p-0">
-                                        <img src={personalProject.imageUrl} className="object-cover rounded-t-md" alt={`${personalProject.name} logo`} />
-                                    </CardContent>
-                                    <CardFooter className="p-2 flex flex-col items-start">
-                                        <p className="text-md quicksand-semibold text-lg">{personalProject.name}</p>
-                                        <p className="text-md quicksand-regular text-sm">{personalProject.description}</p>
-                                    </CardFooter>
-                                </Card>
-                            ))}
+                            {isLoading ? (
+                                <PersonalProjectSkeleton />
+                            ) : (
+                                personalProjectData.map((personalProject, index) => (
+                                    <Card className="rounded-md border shadow-none" key={index}>
+                                        <CardContent className="p-0">
+                                            <img src={personalProject.imageUrl} className="object-cover rounded-t-md" alt={`${personalProject.name} logo`} />
+                                        </CardContent>
+                                        <CardFooter className="p-2 flex flex-col items-start">
+                                            <p className="text-md quicksand-semibold text-lg">{personalProject.name}</p>
+                                            <p className="text-md quicksand-regular text-sm">{personalProject.description}</p>
+                                        </CardFooter>
+                                    </Card>
+                                ))
+                            )}
                         </div>
                     </div>
                 </motion.div>
