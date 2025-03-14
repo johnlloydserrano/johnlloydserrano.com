@@ -5,13 +5,15 @@ import { useTranslation } from "react-i18next";
 import { HOME } from "@/constants/home";
 import { Button } from "../ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
+import { EducationAndWorkExperienceSkeleton } from "@/Components/layout/skeleton/HomeSkeleton";
 
 interface Props {
     educationData: Education[];
     workExperienceData: WorkExperience[];
+    isLoading: boolean
 }
 
-export default function EducationAndWorkExperience({ educationData, workExperienceData }: Props) {
+export default function EducationAndWorkExperience({ educationData, workExperienceData, isLoading }: Props) {
     const { t } = useTranslation();
 
     return (
@@ -29,18 +31,26 @@ export default function EducationAndWorkExperience({ educationData, workExperien
                             <div className="w-full md:w-1/2 space-y-6">
                                 <SectionHeader title={t(HOME.section.title.education)} />
                                 <div className="w-full flex flex-col gap-4 px-4">
-                                    {educationData.map(({ id, logo, school, degree, year }) => (
-                                        <ListItem key={id} logo={logo} title={school} subtitle={degree} description={year} />
-                                    ))}
+                                    {isLoading ? (
+                                        <EducationAndWorkExperienceSkeleton />
+                                    ) : (
+                                        educationData?.map(({ id, logo, school, degree, year }) => (
+                                            <ListItem key={id} logo={logo} title={school} subtitle={degree} description={year} />
+                                        ))
+                                    )}
                                 </div>
                             </div>
 
                             <div className="w-full md:w-1/2 space-y-6">
                                 <SectionHeader title={t(HOME.section.title.workExperience)} />
                                 <div className="w-full flex flex-col gap-4 px-4">
-                                    {workExperienceData.map(({ id, logo, company, role, period }) => (
-                                        <ListItem key={id} logo={logo} title={company} subtitle={role} description={period} />
-                                    ))}
+                                    {isLoading ? (
+                                        <EducationAndWorkExperienceSkeleton />
+                                    ) : (
+                                        workExperienceData?.map(({ id, logo, company, role, period }) => (
+                                            <ListItem key={id} logo={logo} title={company} subtitle={role} description={period} />
+                                        ))
+                                    )}
                                 </div>
                             </div>
                         </div>

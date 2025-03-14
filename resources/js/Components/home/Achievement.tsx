@@ -6,9 +6,10 @@ import TimelineLayout from "../layout/timeline/TimelineLayout";
 
 interface Props {
     achievementData: Timeline[];
+    isLoading: boolean;
 }
 
-export default function Achievement({ achievementData }: Props) {
+export default function Achievement({ achievementData, isLoading }: Props) {
     const { t } = useTranslation()
 
     return (
@@ -23,7 +24,7 @@ export default function Achievement({ achievementData }: Props) {
                 >
                     <SectionHeader title={t(HOME.section.title.achievement)} />
                     <div className="h-full w-full flex justify-center items-center">
-                        <TimelineLayout timelineData={achievementData} />
+                        <TimelineLayout timelineData={achievementData} isLoading={isLoading} />
                     </div>
                 </motion.div>
             </div>

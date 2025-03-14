@@ -9,8 +9,15 @@ import { Button } from "../ui/button";
 import { Handshake, Rocket } from "lucide-react";
 import { useTranslation } from "react-i18next";
 import { HOME } from "@/constants/home";
+import { HeroSkeleton } from "../layout/skeleton/HomeSkeleton";
 
-export default function HeroSection({ name, imageUrl, headline, paragraphs }: Hero) {
+interface Props {
+    heroData: Hero;
+    isLoading: boolean;
+}
+
+
+export default function HeroSection({ heroData, isLoading }: Props) {
     const { t } = useTranslation();
     const [init, setInit] = useState(false);
 
@@ -59,6 +66,8 @@ export default function HeroSection({ name, imageUrl, headline, paragraphs }: He
         []
     );
 
+    if (isLoading) return <HeroSkeleton />;
+
     return (
         <div className="hero-wrapper h-screen relative overflow-hidden select-none">
             {init && (
@@ -72,13 +81,13 @@ export default function HeroSection({ name, imageUrl, headline, paragraphs }: He
                     <div className="flex items-start justify-center">
                         <div className="p-6 text-start">
                             <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-xxl-responsive tracking-tight color-effect leading-tight">
-                                {name}
+                                {heroData.name}
                             </p>
                         </div>
                     </div>
                     <div className="h-full flex flex-col md:flex-row p-6">
                         <div className="w-full md:w-1/2 flex flex-col justify-center items-center mb-8 md:mb-0">
-                            <img className="h-72 sm:h-80 md:h-96" src={imageUrl} alt={name} />
+                            <img className="h-72 sm:h-80 md:h-96" src={heroData.imageUrl} alt={heroData.name} />
                             <div className="mt-6 w-full flex justify-center items-center py-6 space-x-6">
                                 <Button className="w-[30%] relative overflow-hidden group" variant="primary">
                                     <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-accent transition-all duration-300 ease-out group-hover:w-full"></span>
@@ -97,9 +106,9 @@ export default function HeroSection({ name, imageUrl, headline, paragraphs }: He
                             </div>
                         </div>
                         <div className="h-full w-full md:w-1/2 p-4 mt-6">
-                            <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-4xl color-effect">{headline}</p>
+                            <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-4xl color-effect">{heroData.headline}</p>
                             <div className="space-y-4 mt-12 quicksand-medium text-text text-base sm:text-md tracking-wide leading-relaxed">
-                                {paragraphs.map((text, index) => (
+                                {heroData.paragraphs.map((text, index) => (
                                     <p key={index}>{text}</p>
                                 ))}
                             </div>
