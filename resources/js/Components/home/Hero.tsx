@@ -1,70 +1,19 @@
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import {
-    type Container,
-    type ISourceOptions,
-} from "@tsparticles/engine";
-import { loadSlim } from "@tsparticles/slim";
+import Particles from "@tsparticles/react";
+import { useParticles } from "@/hooks/use-particles";
+import { HeroSkeleton } from "@/Components/layout/skeleton/HomeSkeleton";
 import { Button } from "../ui/button";
 import { Handshake, Rocket } from "lucide-react";
-import { useTranslation } from "react-i18next";
 import { HOME } from "@/constants/home";
-import { HeroSkeleton } from "../layout/skeleton/HomeSkeleton";
+import { useTranslation } from "react-i18next";
 
 interface Props {
     heroData: Hero;
     isLoading: boolean;
 }
 
-
 export default function HeroSection({ heroData, isLoading }: Props) {
+    const { init, options } = useParticles();
     const { t } = useTranslation();
-    const [init, setInit] = useState(false);
-
-    useEffect(() => {
-        initParticlesEngine(async (engine) => {
-            await loadSlim(engine);
-        }).then(() => {
-            setInit(true);
-        });
-    }, []);
-
-    const particlesLoaded = async (container?: Container): Promise<void> => {
-        console.log("JLS 46 : loaded particles")
-    };
-
-    const options: ISourceOptions = useMemo(
-        () => ({
-            fullScreen: { enable: false },
-            background: { color: "transparent" },
-            fpsLimit: 120,
-            interactivity: {
-                events: {
-                    onClick: { enable: true, mode: "push" },
-                },
-                modes: {
-                    push: { quantity: 4 },
-                },
-            },
-            particles: {
-                color: { value: ["#e30022bf", "#e97239", "#ff778b"] },
-                move: {
-                    direction: "bottom",
-                    enable: true,
-                    gravity: { enable: false },
-                    outModes: { default: "out" },
-                    speed: 1,
-                    straight: false,
-                },
-                number: { density: { enable: true }, value: 100 },
-                opacity: { value: { min: 0.4, max: 0.9 } },
-                shape: { type: "circle" },
-                size: { value: { min: 3, max: 5 } },
-            },
-            detectRetina: true,
-        }),
-        []
-    );
 
     if (isLoading) return <HeroSkeleton />;
 
@@ -72,14 +21,13 @@ export default function HeroSection({ heroData, isLoading }: Props) {
         <div className="hero-wrapper h-screen relative overflow-hidden select-none">
             {init && (
                 <div className="absolute inset-0 z-0 pointer-events-none">
-                    <Particles id="tsparticles" particlesLoaded={particlesLoaded} options={options} />
+                    <Particles id="heroParticles" options={options} />
                 </div>
             )}
-
             <section className="relative container px-24 mx-auto bg-transparent w-full h-full flex items-center">
                 <div className="hero-section-box">
                     <div className="flex items-start justify-center">
-                        <div className="p-6 text-start">
+                        <div className="p-6 mt-6 text-start">
                             <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-xxl-responsive tracking-tight color-effect leading-tight">
                                 {heroData.name}
                             </p>
@@ -90,14 +38,14 @@ export default function HeroSection({ heroData, isLoading }: Props) {
                             <img className="h-72 sm:h-80 md:h-96" src={heroData.imageUrl} alt={heroData.name} />
                             <div className="mt-6 w-full flex justify-center items-center py-6 space-x-6">
                                 <Button className="w-[30%] relative overflow-hidden group" variant="primary">
-                                    <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-accent transition-all duration-300 ease-out group-hover:w-full"></span>
+                                    <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                                     <span className="relative z-10 flex items-center gap-2">
                                         <Handshake />
                                         {t(HOME.section.button.work)}
                                     </span>
                                 </Button>
                                 <Button className="w-[30%] relative overflow-hidden group" variant="primary">
-                                    <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-accent transition-all duration-500 ease-out group-hover:w-full"></span>
+                                    <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-secondary transition-all duration-500 ease-out group-hover:w-full"></span>
                                     <span className="relative z-10 flex items-center gap-2">
                                         <Rocket />
                                         {t(HOME.section.button.project)}
