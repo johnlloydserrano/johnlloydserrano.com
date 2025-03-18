@@ -29,6 +29,7 @@ export const ja = {
             work: "一緒に働く",
             project: "プロジェクトを開始",
             contact: "メッセージを送信",
+            header: "プロジェクトを開始する",
             footer: "今すぐプロジェクトを開始",
         },
         form: {

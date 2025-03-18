@@ -29,6 +29,7 @@ export const en = {
             work: "Work With Me",
             project: "Start Your Project",
             contact: "Send Message",
+            header: "Start your project",
             footer: "Start your project now",
         },
         form: {

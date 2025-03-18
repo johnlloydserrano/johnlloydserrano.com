@@ -116,7 +116,7 @@ export const personalProjectData: PersonalProject[] = [
 
 export const timelineData: Timeline[] = [
     {
-        imageUrl: "/images/treasurer.jpg",
+        imageUrl: "/images/logomark-hipe.jpg",
         title: 'Officially Appointed as Treasurer of HIPE Japan Inc.',
         description: "I am honored to announce my appointment as the new Treasurer of HIPE Japan Inc., following the resignation of the previous treasurer. In this role, I will manage the company's financial activities and I am committed to maintaining transparency and accuracy in all financial matters and look forward to contributing to the company's continued success.",
         time: 'June, 2023',
@@ -157,5 +157,13 @@ export const timelineData: Timeline[] = [
         description: "I am honored to be selected as Employee of the Month by the Director of HIPE Japan Inc. This recognition is particularly meaningful as it reflects not just my dedication but also the positive impact of my efforts. The Director's quote, \"Since last year, he has worked hard alone, and our clients have recognized the results, which has led to an increase in the number of team members,\" highlights the success and growth that our work has achieved. I am deeply grateful for this acknowledgment and look forward to continuing to contribute to our collective success with enthusiasm and commitment.",
         time: 'February, 2022',
     },
+];
+
+export const sectionData: Section[] = [
+    { name: "Experience", id: "experience" },
+    { name: "Skills", id: "skills" },
+    { name: "Personal Projects", id: "personal-projects" },
+    { name: "Achievements", id: "achievements" },
+    { name: "Contact", id: "contact" },
 ];
 

@@ -29,6 +29,7 @@ export const HOME = {
             work: "section.button.work",
             project: "section.button.project",
             contact: "section.button.contact",
+            header: "section.button.header",
             footer: "section.button.footer",
         },
         form: {

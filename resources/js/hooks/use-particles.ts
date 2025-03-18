@@ -11,6 +11,7 @@ export function useParticles() {
             await loadSlim(engine);
         }).then(() => {
             setInit(true);
+            console.log("JLS-46: tsParticles  initialized successfully")
         });
     }, []);
 
@@ -19,14 +20,6 @@ export function useParticles() {
             fullScreen: { enable: false },
             background: { color: "transparent" },
             fpsLimit: 120,
-            interactivity: {
-                events: {
-                    onClick: { enable: true, mode: "push" },
-                },
-                modes: {
-                    push: { quantity: 4 },
-                },
-            },
             particles: {
                 color: { value: ["#e30022bf", "#e97239", "#ff778b"] },
                 move: {
@@ -35,7 +28,7 @@ export function useParticles() {
                     outModes: { default: "out" },
                     speed: 1,
                 },
-                number: { density: { enable: true }, value: 100 },
+                number: { density: { enable: true }, value: 120 },
                 opacity: { value: { min: 0.4, max: 0.9 } },
                 shape: { type: "circle" },
                 size: { value: { min: 3, max: 5 } },
@@ -47,3 +40,7 @@ export function useParticles() {
 
     return { init, options };
 }
+
+// documentation: https://github.com/tsparticles/react
+// Particle effects powered by tsParticles: https://particles.js.org
+// useParticles hook arranged by: jl-serrano
