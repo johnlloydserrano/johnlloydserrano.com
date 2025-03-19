@@ -1,3 +1,4 @@
+import { heroData } from "@/data/data";
 import { motion } from "framer-motion";
 
 export default function PageLoader() {
@@ -9,9 +10,14 @@ export default function PageLoader() {
             transition={{ duration: 0.8, delay: 0.6 }}
             onAnimationComplete={() => console.log("JLS-40 : Page Loaded")}
         >
-            <div className="h-12 w-12 rounded-full flex items-center justify-center">
-                <img src="/images/serrano.png" alt="" />
-            </div>
+            <div
+                className="h-12 w-12 rounded-full bg-center bg-cover bg-no-repeat"
+                style={{
+                    backgroundImage: `url(${heroData.imageUrl})`,
+                }}
+                aria-label={heroData.name}
+                role="img"
+            />
         </motion.div>
     );
 }

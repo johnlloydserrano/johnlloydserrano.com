@@ -1,9 +1,9 @@
-import Particles from "@tsparticles/react";
 import { useParticles } from "@/hooks/use-particles";
 import { Button } from "../ui/button";
 import { Handshake, Rocket } from "lucide-react";
 import { HOME } from "@/constants/home";
 import { useTranslation } from "react-i18next";
+import Particles from "@tsparticles/react";
 
 interface Props {
     heroData: Hero;
@@ -21,7 +21,7 @@ export default function HeroSection({ heroData, isLoading }: Props) {
                     <Particles id="heroParticles" className="h-full w-full" options={options} />
                 </div>
             )}
-            <section className="relative container mx-auto px-6 sm:px-12 md:px-16 lg:px-24 w-full max-w-screen-xl flex flex-col items-center justify-center py-12 text-center">
+            <section className="relative px-8 xl:px-24 mx-auto w-full flex flex-col items-center justify-center py-12 text-center">
                 <div className="w-full py-6">
                     <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-xl-responsive tracking-tight color-effect leading-tight w-full">
                         {heroData.name}
@@ -54,7 +54,7 @@ export default function HeroSection({ heroData, isLoading }: Props) {
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 p-4 mt-10 lg:mt-0">
-                        <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-4xl color-effect sm:text-start text-center">
+                        <p className="font-acorn text-3xl md:text-4xl lg:text-4xl color-effect sm:text-start text-center">
                             {heroData.headline}
                         </p>
                         <div className="space-y-4 mt-6 quicksand-medium text-text text-base sm:text-md tracking-wide leading-relaxed sm:text-start text-center">

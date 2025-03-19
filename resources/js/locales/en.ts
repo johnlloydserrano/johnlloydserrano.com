@@ -4,33 +4,35 @@ export const en = {
             education: "My Education",
             workExperience: "My Work Experience",
             skill: "My Skills",
+            service: "My Services",
             personalProject: "My Personal Projects",
             achievement: "My Achievements",
             contact: {
                 text: "Contact Me",
-                subTextContact: "My Contact Information",
-                subTextSocial: "My Social Media",
-                subTextMessage: "Please provide as much detail as possible.",
-                desc: "I look forward to hearing from you. Please fill out the form, and I will respond as soon as possible.",
+                subTextContact: "Contact Information",
+                subTextSocial: "Social Media",
+                subTextMessage: "Please provide as many details as possible.",
+                desc: "I look forward to hearing from you. Fill out the form below, and I’ll get back to you as soon as possible.",
             },
             footer: {
                 project: {
                     name: "John Lloyd Serrano",
                     text: "Ready to start your project?",
-                    desc: "Get started with your project today and bring your ideas to life",
-                    made: "Made With",
-                    copyright: "by John Lloyd Serrano",
+                    desc: "Start your project today and bring your ideas to life.",
+                    made: "Designed and developed from scratch with",
+                    copyright: "John Lloyd Serrano",
                 }
             }
         },
         button: {
             linkedIn: "View LinkedIn",
             skillSheet: "Download Skill Sheet",
+            resume: "Download Resume",
             work: "Work With Me",
             project: "Start Your Project",
             contact: "Send Message",
-            header: "Start your project",
-            footer: "Start your project now",
+            header: "Start Your Project",
+            footer: "Start Your Project Now",
         },
         form: {
             contact: {

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { sectionData, educationData, workExperienceData, heroData, skillData, personalProjectData, timelineData } from "@/data/data";
+import { sectionData, educationData, workExperienceData, heroData, skillData, personalProjectData, timelineData, serviceData } from "@/data/data";
 import EducationAndWorkExperience from "@/Components/home/EducationAndWorkExperience";
 import Skill from "@/Components/home/Skill";
 import PersonalProject from "@/Components/home/PersonalProject";
@@ -8,6 +8,7 @@ import Contact from "@/Components/home/Contact";
 import Navbar from "@/Components/home/Navbar";
 import HeroSection from "@/Components/home/Hero";
 import Footer from "@/Components/home/Footer";
+import Service from "@/Components/home/Service";
 
 export default function SectionList() {
     const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,9 @@ export default function SectionList() {
                     )}
                     {section.id === "skills" && (
                         <Skill skillData={skillData} isLoading={isLoading} />
+                    )}
+                    {section.id === "services" && (
+                        <Service serviceData={serviceData} isLoading={isLoading} />
                     )}
                     {section.id === "personal-projects" && (
                         <PersonalProject
