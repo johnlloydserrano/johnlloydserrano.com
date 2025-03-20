@@ -6,15 +6,15 @@ import {
     TimelineTime,
     TimelineHeader,
     TimelineHero,
-} from '@/Components/layout/timeline/Timeline';
-import { TimelineSkeleton } from '@/Components/layout/skeleton/HomeSkeleton';
+} from "@/Components/ui/timeline";
+import { TimelineSkeleton } from "@/Components/layout/HomeSkeleton";
 
-interface Props {
+interface TimelineProps {
     timelineData: Timeline[];
     isLoading: boolean;
 }
 
-export default function TimelineLayout({ timelineData, isLoading }: Props) {
+export function TimelineLayout({ timelineData, isLoading }: TimelineProps) {
     return (
         <Timeline className="pt-6 px-4 w-full">
             {isLoading ? (
@@ -31,12 +31,13 @@ export default function TimelineLayout({ timelineData, isLoading }: Props) {
                                             src={timeline.imageUrl}
                                             className="h-full w-full object-cover rounded-lg"
                                             alt={`${timeline.title} image`}
+                                            loading="lazy"
                                         />
                                     </div>
                                     <div className="w-[59%] px-6 space-y-6">
                                         <TimelineTitle className="text-xl quicksand-semibold">{timeline.title}</TimelineTitle>
                                         <TimelineDescription className="whitespace-pre-line text-muted-foreground text-base text-justify quicksand-regular">
-                                            {timeline.description.replace(/<br\s*\/?>/g, "\n")}
+                                            {timeline.description.replace(/<br\s*\/?\>/g, "\n")}
                                         </TimelineDescription>
                                     </div>
                                 </div>

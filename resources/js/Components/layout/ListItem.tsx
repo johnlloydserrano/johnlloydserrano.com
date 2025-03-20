@@ -13,7 +13,14 @@ export default function ListItem({ logo, title, subtitle, description }: Props) 
     return (
         <Card className="flex items-center pb-4 rounded-none border-x-0 border-t-0 border-b-gray-200 shadow-none">
             <div className="w-1/5 h-24 py-2 flex justify-center items-center">
-                <img className="h-full" src={logo} alt={title} />
+                <div
+                    className="h-full w-full bg-center bg-contain bg-no-repeat"
+                    style={{
+                        backgroundImage: `url(${logo})`,
+                    }}
+                    aria-label={title}
+                    role="img"
+                />
             </div>
             <div className="w-4/5">
                 <ul className="list-none">
@@ -24,6 +31,6 @@ export default function ListItem({ logo, title, subtitle, description }: Props) 
                     </li>
                 </ul>
             </div>
-        </Card >
+        </Card>
     );
 };

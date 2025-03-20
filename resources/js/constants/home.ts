@@ -4,6 +4,7 @@ export const HOME = {
             education: "section.title.education",
             workExperience: "section.title.workExperience",
             skill: "section.title.skill",
+            service: "section.title.service",
             personalProject: "section.title.personalProject",
             achievement: "section.title.achievement",
             contact: {
@@ -26,9 +27,11 @@ export const HOME = {
         button: {
             linkedIn: "section.button.linkedIn",
             skillSheet: "section.button.skillSheet",
+            resume: "section.button.resume",
             work: "section.button.work",
             project: "section.button.project",
             contact: "section.button.contact",
+            header: "section.button.header",
             footer: "section.button.footer",
         },
         form: {

@@ -5,7 +5,7 @@ import {
     TimelineTime,
     TimelineHeader,
     TimelineHero,
-} from '@/Components/layout/timeline/Timeline';
+} from '@/Components/ui/timeline';
 import { Skeleton } from "@/Components/ui/skeleton";
 import { Card, CardContent, CardFooter } from "@/Components/ui/card";
 
@@ -76,41 +76,9 @@ const SkillSkeleton = () => (
     </div>
 );
 
-const HeroSkeleton = () => (
-    <div className="hero-wrapper h-screen relative overflow-hidden select-none">
-        <section className="relative container px-24 mx-auto bg-transparent w-full h-full flex items-center">
-            <div className="hero-section-box w-full">
-                <div className="w-full flex items-start justify-center">
-                    <div className="w-1/2 p-6 text-start">
-                        <Skeleton className="w-full h-10 sm:h-12 md:h-16 lg:h-20" />
-                    </div>
-                </div>
-                <div className="h-full flex flex-col md:flex-row p-6">
-                    <div className="w-full md:w-1/2 flex flex-col justify-center items-center mb-8 md:mb-0">
-                        <Skeleton className="h-72 sm:h-80 md:h-96 w-72 sm:w-80 md:w-96 rounded-full" />
-                        <div className="mt-6 w-full flex justify-center items-center py-6 space-x-6">
-                            <Skeleton className="w-[30%] h-12 rounded-md" />
-                            <Skeleton className="w-[30%] h-12 rounded-md" />
-                        </div>
-                    </div>
-
-                    <div className="h-full w-full md:w-1/2 p-4 mt-6">
-                        <Skeleton className="w-3/4 h-10 sm:h-12 md:h-14 lg:h-16" />
-                        <div className="h-full space-y-4 mt-12">
-                            <Skeleton className="w-full py-24 sm:h-7 md:h-8" />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
-);
-
-
 export {
     TimelineSkeleton,
     PersonalProjectSkeleton,
     EducationAndWorkExperienceSkeleton,
     SkillSkeleton,
-    HeroSkeleton,
 }
