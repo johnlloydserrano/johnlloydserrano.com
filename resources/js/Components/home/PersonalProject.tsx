@@ -42,10 +42,11 @@ export default function PersonalProject({ personalProjectData, isLoading }: Prop
                                     >
                                         <Card className="rounded-md border shadow-none">
                                             <CardContent className="p-0">
-                                                <img
-                                                    src={personalProject.imageUrl}
-                                                    className="object-cover rounded-t-md"
-                                                    alt={`${personalProject.name} logo`}
+                                                <div
+                                                    className="w-full h-64 rounded-t-md bg-center bg-cover"
+                                                    style={{ backgroundImage: `url(${personalProject.imageUrl})` }}
+                                                    role="img"
+                                                    aria-label={`${personalProject.name} logo`}
                                                 />
                                             </CardContent>
                                             <CardFooter className="p-2 flex flex-col items-start space-y-2">

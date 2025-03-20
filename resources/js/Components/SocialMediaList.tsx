@@ -20,10 +20,10 @@ export default function SocialMediaList({ socialMediaData }: Props) {
                         className="flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                         rel="noopener noreferrer"
                     >
-                        <img
-                            src={social.imageUrl}
-                            alt={social.name}
-                            className="h-8 w-8 object-contain"
+                        <div
+                            className="h-8 w-8 bg-contain bg-center bg-no-repeat"
+                            style={{ backgroundImage: `url(${social.imageUrl})` }}
+                            title={social.name}
                         />
                     </a>
                 ))}

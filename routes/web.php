@@ -18,8 +18,13 @@ Route::get('/projects/{slug}', function () {
     return Inertia::render('Project/Detail');
 })->name("project.detail");
 
+Route::get('/privacy-policy', function () {
+    return Inertia::render('PrivacyPolicy');
+})->name('privacy-policy');
+
 Route::get('/{any}', function () {
     return Inertia::render('Errors/NotFound');
 })->where('any', '.*');
+
 
 require __DIR__.'/auth.php';

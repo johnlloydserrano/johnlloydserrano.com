@@ -21,6 +21,7 @@ export const ja = {
                     desc: "今すぐプロジェクトを始めて、あなたのアイデアを形にしましょう。",
                     made: "一からデザイン・開発しました",
                     copyright: "John Lloyd Serrano",
+                    domain: "johnlloydserrano.com",
                 }
             }
         },

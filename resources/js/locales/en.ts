@@ -21,6 +21,7 @@ export const en = {
                     desc: "Start your project today and bring your ideas to life.",
                     made: "Designed and developed from scratch with",
                     copyright: "John Lloyd Serrano",
+                    domain: "johnlloydserrano.com",
                 }
             }
         },

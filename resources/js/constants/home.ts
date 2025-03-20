@@ -21,6 +21,7 @@ export const HOME = {
                     desc: "section.title.footer.project.desc",
                     made: "section.title.footer.project.made",
                     copyright: "section.title.footer.project.copyright",
+                    domain: "section.title.footer.project.domain"
                 }
             }
         },
