@@ -1,0 +1,13 @@
+version: 2
+updates:
+  # React (JavaScript/TypeScript) dependencies
+  - package-ecosystem: "npm"  # This will handle your React/Node.js dependencies
+    directory: "/"             # Location of package manifests (e.g., package.json)
+    schedule:
+      interval: "weekly"       # You can adjust this to daily, monthly, etc.
+
+  # Laravel (PHP) dependencies
+  - package-ecosystem: "composer"  # This will handle your Laravel/PHP dependencies
+    directory: "/"                  # Location of composer.json
+    schedule:
+      interval: "weekly"            # You can adjust this as needed
