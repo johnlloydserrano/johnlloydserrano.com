@@ -20,18 +20,70 @@
         <meta name="twitter:image" content="https://cloudfront.johnlloydserrano.com/public/images/static/serrano-meta.png">
 
         <link rel="icon" href="https://cloudfront.johnlloydserrano.com/public/images/static/serrano.png" type="image/x-icon">
-        
-        <!-- Google tag (gtag.js) -->
+
+        <link rel="canonical" href="{{ url()->current() }}">
+
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WQX4319GHS"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-WQX4319GHS');
         </script>
 
-        <!-- Scripts -->
+        @php
+            $currentUrl = url()->current();
+            $breadcrumbData = [
+                "@context" => "https://schema.org",
+                "@type" => "BreadcrumbList",
+                "itemListElement" => [
+                    [
+                        "@type" => "ListItem",
+                        "position" => 1,
+                        "name" => "Home",
+                        "item" => url('/')
+                    ]
+                ]
+            ];
+
+            if (request()->is('projects/*')) {
+                $projectName = ucwords(str_replace('-', ' ', request()->segment(2)));
+                $breadcrumbData['itemListElement'][] = [
+                    "@type" => "ListItem",
+                    "position" => 2,
+                    "name" => $projectName,
+                    "item" => $currentUrl
+                ];
+            }
+
+            if (request()->is('privacy-policy')) {
+                $breadcrumbData['itemListElement'][] = [
+                    "@type" => "ListItem",
+                    "position" => 2,
+                    "name" => "Privacy Policy",
+                    "item" => $currentUrl
+                ];
+            }
+
+            $personData = [
+                "@context" => "https://schema.org",
+                "@type" => "Person",
+                "name" => "John Lloyd Serrano",
+                "url" => "https://johnlloydserrano.com",
+                "image" => "https://cloudfront.johnlloydserrano.com/public/images/static/serrano-meta.png",
+                "jobTitle" => "Web Developer",
+                "description" => "John Lloyd Serrano is a dedicated web developer with a foundation built on professional growth and hands-on experience. He contributes to collaborative projects, helping deliver practical and reliable solutions that support both team goals and client needs.",
+                "sameAs" => [
+                    "https://www.linkedin.com/in/johnlloydserrano",
+                    "https://github.com/jl-serrano"
+                ]
+            ];
+        @endphp
+
+        <script type="application/ld+json">
+            {!! json_encode([$personData, $breadcrumbData], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT) !!}
+        </script>
+
         @routes
         @viteReactRefresh
         @vite(['resources/js/app.tsx', "resources/js/Pages/{$page['component']}.tsx"])
