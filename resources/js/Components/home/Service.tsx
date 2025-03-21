@@ -32,7 +32,7 @@ export default function Service({ serviceData, isLoading }: Props) {
                                     {serviceData?.map((service, index) => (
                                         <li
                                             key={index}
-                                            className="flex items-start gap-3 leading-relaxed mb-2"
+                                            className="flex items-start gap-3 space-y-2.5 leading-relaxed mb-2"
                                         >
                                             <Check className="text-accent min-w-[20px] min-h-[20px]" />
                                             <span className="quicksand-regular">{service.description}</span>

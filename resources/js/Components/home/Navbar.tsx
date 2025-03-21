@@ -51,7 +51,7 @@ export default function Navbar({ sectionData }: Props) {
         <>
             <motion.div
                 className={cn(
-                    "fixed top-0 z-50 w-full border-b bg-gradient-to-b from-background/80 via-background/80 to-background backdrop-blur-md transition-all",
+                    "fixed top-0 z-50 w-full border-b bg-linear-to-b from-background/80 via-background/80 to-background backdrop-blur-md transition-all",
                     isFirstRender.current ? "-translate-y-full" : "",
                 )}
                 initial={{ y: "-100%" }}
@@ -82,7 +82,7 @@ export default function Navbar({ sectionData }: Props) {
                         {sectionData.map((item) => (
                             <motion.div
                                 key={item.id}
-                                className="relative text-sm text-gray-700 transition-colors hover:text-gray-900 dark:text-gray-300 dark:hover:text-white cursor-pointer"
+                                className="relative text-sm text-gray-700 transition-colors hover:text-gray-900 cursor-pointer"
                                 whileTap={{ scale: 0.95 }}
                                 whileHover={{ y: -2 }}
                                 onClick={(e) => {
@@ -92,7 +92,7 @@ export default function Navbar({ sectionData }: Props) {
                             >
                                 {item.name}
                                 <motion.span
-                                    className="absolute left-0 -bottom-1 h-0.5 w-full bg-gray-900 dark:bg-white origin-left scale-x-0"
+                                    className="absolute left-0 -bottom-1 h-0.5 w-full bg-gray-900 origin-left scale-x-0"
                                     initial={{ scaleX: 0 }}
                                     whileHover={{ scaleX: 1 }}
                                     transition={{ duration: 0.3 }}
@@ -102,7 +102,7 @@ export default function Navbar({ sectionData }: Props) {
                     </nav>
 
                     <div className="flex items-center gap-4">
-                        <Button className="hidden sm:block text-xs !px-3 !py-0" variant="primary">
+                        <Button className="hidden sm:block text-xs px-3! py-0!" variant="primary">
                             <span className="relative z-10 flex items-center gap-2">
                                 {t(HOME.section.button.header)}
                             </span>
@@ -128,13 +128,13 @@ export default function Navbar({ sectionData }: Props) {
                             duration: 0.2,
                             ease: "easeInOut",
                         }}
-                        className="md:hidden w-full bg-background/95 backdrop-blur-sm fixed top-16 left-0 right-0 z-10 shadow-md"
+                        className="md:hidden w-full bg-background/95 backdrop-blur-xs fixed top-16 left-0 right-0 z-10 shadow-md"
                     >
                         <div className="flex flex-col gap-4 p-4">
                             {sectionData.map((item) => (
                                 <div
                                     key={item.id}
-                                    className="text-gray-700 dark:text-gray-200 text-base"
+                                    className="text-gray-700 text-base"
                                     onClick={(e) => {
                                         e.preventDefault()
                                         handleScroll(item.id)

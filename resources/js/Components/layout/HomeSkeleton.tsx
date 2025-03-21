@@ -25,7 +25,7 @@ const TimelineSkeleton = () => (
                             <TimelineTitle className="text-xl quicksand-semibold">
                                 <Skeleton className="w-full h-12" />
                             </TimelineTitle>
-                            <TimelineDescription className="whitespace-pre-line text-muted-foreground text-base text-justify quicksand-regular">
+                            <TimelineDescription className="whitespace-pre-line text-title-sub text-base text-justify quicksand-regular">
                                 <Skeleton className="h-32 w-full" />
                             </TimelineDescription>
                         </div>

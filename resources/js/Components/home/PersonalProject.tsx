@@ -40,7 +40,7 @@ export default function PersonalProject({ personalProjectData, isLoading }: Prop
                                         href={route('project.detail', { slug: personalProject.slug })}
                                         className="rounded-md"
                                     >
-                                        <Card className="rounded-md border shadow-none">
+                                        <Card className="rounded-md border shadow-none bg-white">
                                             <CardContent className="p-0">
                                                 <div
                                                     className="w-full h-64 rounded-t-md bg-center bg-cover"

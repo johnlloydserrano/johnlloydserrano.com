@@ -22,7 +22,7 @@ export default function HeroSection({ heroData, isLoading }: Props) {
                 </div>
             )}
             <section className="relative px-8 xl:px-24 mx-auto w-full flex flex-col items-center justify-center py-12 text-center">
-                <div className="w-full py-6">
+                <div className="w-full py-3">
                     <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-xl-responsive tracking-tight color-effect leading-tight w-full">
                         {heroData.name}
                     </p>
@@ -38,7 +38,7 @@ export default function HeroSection({ heroData, isLoading }: Props) {
                                 className="w-full sm:w-auto px-6 py-3 relative overflow-hidden group"
                                 variant="primary"
                             >
-                                <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+                                <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                                 <span className="relative z-10 flex items-center gap-2">
                                     <Handshake />
                                     {t(HOME.section.button.work)}
@@ -48,7 +48,7 @@ export default function HeroSection({ heroData, isLoading }: Props) {
                                 className="w-full sm:w-auto px-6 py-3 relative overflow-hidden group"
                                 variant="primary"
                             >
-                                <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-secondary transition-all duration-500 ease-out group-hover:w-full"></span>
+                                <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-500 ease-out group-hover:w-full"></span>
                                 <span className="relative z-10 flex items-center gap-2">
                                     <Rocket />
                                     {t(HOME.section.button.project)}

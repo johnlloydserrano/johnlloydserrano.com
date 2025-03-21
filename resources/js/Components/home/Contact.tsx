@@ -76,7 +76,7 @@ export default function Contact() {
                                                         <FormControl>
                                                             <Input
                                                                 placeholder={t(HOME.section.form.contact.placeHolder.name)}
-                                                                className="quicksand-medium focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none"
+                                                                className="quicksand-regular focus:ring-0 appearance-none focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none"
                                                                 {...field}
                                                             />
                                                         </FormControl>
@@ -94,7 +94,7 @@ export default function Contact() {
                                                         <FormControl>
                                                             <Input
                                                                 placeholder={t(HOME.section.form.contact.placeHolder.email)}
-                                                                className="quicksand-medium focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none"
+                                                                className="quicksand-regular focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none"
                                                                 type="email"
                                                                 {...field}
                                                             />
@@ -113,11 +113,11 @@ export default function Contact() {
                                                         <FormControl>
                                                             <Textarea
                                                                 placeholder={t(HOME.section.form.contact.placeHolder.message)}
-                                                                className="quicksand-medium focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none min-h-[120px]"
+                                                                className="quicksand-regular focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none min-h-[120px]"
                                                                 {...field}
                                                             />
                                                         </FormControl>
-                                                        <FormDescription className="quicksand-regular text-xs">{t(HOME.section.title.contact.subTextMessage)}</FormDescription>
+                                                        <FormDescription className="quicksand-thin text-xs">{t(HOME.section.title.contact.subTextMessage)}</FormDescription>
                                                         <FormMessage />
                                                     </FormItem>
                                                 )}
@@ -128,7 +128,7 @@ export default function Contact() {
                                                     className="w-auto relative overflow-hidden group"
                                                     variant="primary"
                                                 >
-                                                    <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+                                                    <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                                                     <span className="relative z-10 flex items-center gap-2">
                                                         <Send />
                                                         {t(HOME.section.button.contact)}
@@ -145,7 +145,7 @@ export default function Contact() {
                                     <div className="space-y-2">
                                         <h4 className="quicksand-semibold">{t(HOME.section.title.contact.subTextContact)}</h4>
                                         {/* TODO: Make this dynamic */}
-                                        <p className="text-sm text-muted-foreground quicksand-regular leading-relaxed">
+                                        <p className="text-sm text-title-sub quicksand-regular leading-relaxed">
                                             Greenland, Cogon Pardo
                                             <br />
                                             Cebu City, 6000 Cebu

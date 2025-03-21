@@ -70,7 +70,7 @@ export default function EducationAndWorkExperience({ educationData, workExperien
                         <div className="flex justify-center items-center py-6">
                             <a href="https://linkedin.com/in/jl-serrano" rel="noopener noreferrer" target="_blank" className="w-auto relative overflow-hidden group">
                                 <Button className="w-auto relative overflow-hidden group" variant="primary">
-                                    <span className="absolute left-0 top-0 h-full w-0 bg-gradient-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+                                    <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                                     <span className="relative z-10 flex items-center gap-2">
                                         <SquareArrowOutUpRight />
                                         {t(HOME.section.button.linkedIn)}

@@ -17,7 +17,7 @@ export default function SocialMediaList({ socialMediaData }: Props) {
                         key={index}
                         href={social.url}
                         target="_blank"
-                        className="flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+                        className="flex items-center justify-center hover:text-primary transition-colors"
                         rel="noopener noreferrer"
                     >
                         <div

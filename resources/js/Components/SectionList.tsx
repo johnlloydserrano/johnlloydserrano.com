@@ -10,7 +10,11 @@ import HeroSection from "@/Components/home/Hero";
 import Footer from "@/Components/home/Footer";
 import Service from "@/Components/home/Service";
 
-export default function SectionList() {
+interface Props {
+    repositoryVersion?: string;
+}
+
+export default function SectionList({ repositoryVersion }: Props) {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
@@ -48,7 +52,7 @@ export default function SectionList() {
                     {section.id === "contact" && <Contact />}
                 </div>
             ))}
-            <Footer />
+            <Footer repositoryVersion={repositoryVersion} />
         </>
     );
 }

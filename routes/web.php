@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Foundation\Application;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Spatie\Sitemap\Sitemap;
@@ -8,10 +9,9 @@ use Spatie\Sitemap\Tags\Url;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'repositoryVersion' => Http::get('https://api.github.com/repos/johnlloydserrano/johnlloydserrano.com/releases/latest')->json()['tag_name'] ?? 'v1.0.0',
     ]);
 })->name("home");
 

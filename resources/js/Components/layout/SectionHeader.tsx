@@ -9,7 +9,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({ title, description }) => 
             <h2 className="font-acorn text-3xl md:text-4xl lg:text-4xl color-effect tracking-normal">
                 {title}
             </h2>
-            <p className="quicksand-medium text-sm text-muted-foreground">{description}</p>
+            <p className="quicksand-medium text-sm text-title-sub">{description}</p>
         </div>
     );
 };
