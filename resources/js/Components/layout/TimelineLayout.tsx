@@ -36,7 +36,7 @@ export function TimelineLayout({ timelineData, isLoading }: TimelineProps) {
                                     </div>
                                     <div className="w-[59%] px-6 space-y-6">
                                         <TimelineTitle className="text-xl quicksand-semibold">{timeline.title}</TimelineTitle>
-                                        <TimelineDescription className="whitespace-pre-line text-muted-foreground text-base text-justify quicksand-regular">
+                                        <TimelineDescription className="whitespace-pre-line text-title-sub text-base text-justify quicksand-regular">
                                             {timeline.description.replace(/<br\s*\/?\>/g, "\n")}
                                         </TimelineDescription>
                                     </div>

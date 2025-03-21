@@ -2,7 +2,11 @@ import PageLoader from "@/Components/layout/PageLoader";
 import SectionList from "@/Components/SectionList";
 import { useEffect, useState } from "react";
 
-export default function Welcome() {
+interface Props {
+    repositoryVersion?: string;
+}
+
+export default function Welcome({ repositoryVersion }: Props) {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -10,5 +14,5 @@ export default function Welcome() {
         return () => clearTimeout(timer);
     }, []);
 
-    return loading ? <PageLoader /> : <SectionList />;
+    return loading ? <PageLoader /> : <SectionList repositoryVersion={repositoryVersion} />;
 }

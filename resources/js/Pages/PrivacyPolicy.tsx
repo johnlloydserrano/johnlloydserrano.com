@@ -1,5 +1,6 @@
 import { HOME } from "@/constants/home";
 import { heroData, privacyPolicyData } from "@/data/data";
+import { Link } from "@inertiajs/react";
 import { useTranslation } from "react-i18next";
 
 export default function PrivacyPolicy() {
@@ -19,14 +20,9 @@ export default function PrivacyPolicy() {
             <div className="quicksand-regular">
                 <p className="mb-4">
                     {privacyPolicyData.description}
-                    ( <a
-                        href="https://www.linkedin.com/in/jl-serrano"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline hover:decoration-primary"
-                    >
+                    (<Link href={route("home")} className="underline hover:decoration-primary">
                         {t(HOME.section.title.footer.project.domain)}
-                    </a> ).
+                    </Link>).
                 </p>
                 {privacyPolicyData.items.map((section) => (
                     <div key={section.number} className="mt-8 mb-4">
