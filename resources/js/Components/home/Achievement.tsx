@@ -26,7 +26,7 @@ export default function Achievement({ achievementData, isLoading }: Props) {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    viewport={{ once: true, margin: "-200px" }}
+                    viewport={{ once: true, amount: 0.1 }}
                 >
                     <SectionHeader title={t(HOME.section.title.achievement)} />
                     <Carousel

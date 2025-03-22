@@ -21,7 +21,7 @@ export default function Service({ serviceData, isLoading }: Props) {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    viewport={{ margin: "-200px", once: true }}
+                    viewport={{ amount: 0.1, once: true }}
                 >
                     <SectionHeader title={t(HOME.section.title.service)} />
 
