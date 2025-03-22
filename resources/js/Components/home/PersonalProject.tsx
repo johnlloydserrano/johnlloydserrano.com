@@ -26,7 +26,7 @@ export default function PersonalProject({ personalProjectData, isLoading }: Prop
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    viewport={{ once: true, amount: 0.2 }}
+                    viewport={{ once: true, amount: 0.1 }}
                 >
                     <SectionHeader title={t(HOME.section.title.personalProject)} />
                     <div className="h-full w-full flex justify-center">

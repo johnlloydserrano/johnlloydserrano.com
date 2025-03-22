@@ -25,7 +25,7 @@ export default function EducationAndWorkExperience({ educationData, workExperien
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
-                        viewport={{ margin: "-200px", once: true }}
+                        viewport={{ amount: 0.1, once: true }}
                     >
                         <div className="grid grid-cols-1 lg:grid-cols-2 p-6 space-y-12 lg:space-y-0">
                             <div className="w-full space-y-6">

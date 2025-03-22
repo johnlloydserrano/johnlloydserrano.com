@@ -52,7 +52,7 @@ export default function Contact() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    viewport={{ margin: "-200px", once: true }}
+                    viewport={{ amount: 0.1, once: true }}
                 >
                     <div className="p-6">
                         <SectionHeader
