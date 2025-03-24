@@ -23,6 +23,16 @@ Route::get('/privacy-policy', function () {
     return Inertia::render('PrivacyPolicy');
 })->name('privacy-policy');
 
+Route::prefix('download')->name('download.')->group(function () {
+    Route::middleware('throttle:5,1')->get('/resume', function () {
+        return response()->download(public_path('downloads/SERRANO-RESUME.pdf'), 'SERRANO-RESUME.pdf');
+    })->name('resume');
+
+    Route::middleware('throttle:5,1')->get('/skillsheet', function () {
+        return response()->download(public_path('downloads/SERRANO-SKILLSHEET.xlsx'), 'SERRANO-SKILLSHEET.xlsx');
+    })->name('skillsheet');
+});
+
 Route::get('/sitemap.xml', function () {
     $sitemap = Sitemap::create();
 

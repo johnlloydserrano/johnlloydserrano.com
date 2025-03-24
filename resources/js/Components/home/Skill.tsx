@@ -9,6 +9,7 @@ import { Button } from "@/Components/ui/button";
 import { Download } from "lucide-react";
 import { SkillSkeleton } from "@/Components/layout/HomeSkeleton";
 import SectionHeader from "@/Components/layout/SectionHeader";
+import { Link } from "@inertiajs/react";
 
 interface Props {
     skillData: Skill[];
@@ -17,6 +18,12 @@ interface Props {
 
 export default function Skill({ skillData, isLoading }: Props) {
     const { t } = useTranslation();
+
+    const handleDownload = (url: string) => {
+        const link = document.createElement('a');
+        link.href = url;
+        link.click();
+    };
 
     return (
         <div className="skill-wrapper">
@@ -54,24 +61,26 @@ export default function Skill({ skillData, isLoading }: Props) {
                                 ))}
                             </div>
                         )}
-                        <div className="flex justify-center items-center space-x-6">
+                        <div className="flex justify-center items-center space-x-4 md:space-x-6">
                             <Button
+                                onClick={() => handleDownload(route('download.resume'))}
                                 className="w-auto relative overflow-hidden group"
                                 variant="primary"
                             >
                                 <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-400 ease-out group-hover:w-full"></span>
                                 <span className="relative z-10 flex items-center gap-2">
-                                    <Download />
+                                    <Download className="hidden sm:block" />
                                     {t(HOME.section.button.resume)}
                                 </span>
                             </Button>
                             <Button
+                                onClick={() => handleDownload(route('download.skillsheet'))}
                                 className="w-auto relative overflow-hidden group"
                                 variant="primary"
                             >
                                 <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-400 ease-out group-hover:w-full"></span>
                                 <span className="relative z-10 flex items-center gap-2">
-                                    <Download />
+                                    <Download className="hidden sm:block" />
                                     {t(HOME.section.button.skillSheet)}
                                 </span>
                             </Button>

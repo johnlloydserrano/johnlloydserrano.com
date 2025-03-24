@@ -134,7 +134,7 @@ export default function Navbar({ sectionData }: Props) {
                             {sectionData.map((item) => (
                                 <div
                                     key={item.id}
-                                    className="text-gray-700 text-base"
+                                    className="text-base quicksand-semibold"
                                     onClick={(e) => {
                                         e.preventDefault()
                                         handleScroll(item.id)
