@@ -44,7 +44,7 @@ export default function Footer({ repositoryVersion }: Props) {
                         </div>
                     </div>
 
-                    <Button className="w-auto text-lg relative overflow-hidden group px-6! py-3" variant="primary">
+                    <Button className="w-auto text-base relative overflow-hidden group px-6! py-3" variant="primary">
                         <span className="absolute left-0 top-0 h-full w-full bg-linear-to-tr from-primary to-accent"></span>
                         <span className="relative z-10 flex items-center gap-2">
                             {t(HOME.section.button.footer)}
@@ -70,10 +70,10 @@ export default function Footer({ repositoryVersion }: Props) {
                         </Link>
                     </div>
 
-                    <div className="flex flex-col items-center md:items-end space-y-2">
+                    <div className="flex flex-col items-center md:items-end space-y-1.5">
                         <p className="hover:underline hover:decoration-primary flex items-center text-title-sub quicksand-regular text-sm">
                             <Link href={route("privacy-policy")} className="z-10 flex items-center gap-2">
-                                Privacy policy
+                                Privacy Policy
                             </Link>
                         </p>
                         <p className="text-sm text-title-sub quicksand-regular">

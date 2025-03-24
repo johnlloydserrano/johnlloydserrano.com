@@ -17,8 +17,8 @@ export const en = {
             footer: {
                 project: {
                     name: "John Lloyd Serrano",
-                    text: "Ready to start your project?",
-                    desc: "Start your project today and bring your ideas to life.",
+                    text: "Ready to bring your ideas to life?",
+                    desc: "Together, we'll build something extraordinary.",
                     made: "Designed and developed from scratch with",
                     copyright: "John Lloyd Serrano",
                     domain: "johnlloydserrano.com",
@@ -29,11 +29,11 @@ export const en = {
             linkedIn: "View LinkedIn",
             skillSheet: "Download Skill Sheet",
             resume: "Download Resume",
-            work: "Work With Me",
+            work: "Get In Touch",
             project: "Start Your Project",
             contact: "Send Message",
             header: "Start Your Project",
-            footer: "Start Your Project Now",
+            footer: "Start your project today",
         },
         form: {
             contact: {

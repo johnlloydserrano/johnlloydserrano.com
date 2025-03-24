@@ -4,36 +4,36 @@ export const ja = {
             education: "学歴",
             workExperience: "職務経歴",
             skill: "スキル",
-            service: "サービス内容",
+            service: "サービス",
             personalProject: "個人プロジェクト",
-            achievement: "お問い合わせ",
+            achievement: "実績",
             contact: {
                 text: "お問い合わせ",
                 subTextContact: "連絡先情報",
                 subTextSocial: "ソーシャルメディア",
-                subTextMessage: "できるだけ詳しくご入力ください。",
-                desc: "ご連絡をお待ちしております。以下のフォームにご記入いただければ、できるだけ早くご返信いたします。",
+                subTextMessage: "できるだけ詳しい情報をご記入ください。",
+                desc: "ご連絡をお待ちしております。以下のフォームにご記入いただければ、できるだけ早く返信いたします。",
             },
             footer: {
                 project: {
                     name: "John Lloyd Serrano",
-                    text: "プロジェクトを始める準備はできていますか？",
-                    desc: "今すぐプロジェクトを始めて、あなたのアイデアを形にしましょう。",
-                    made: "一からデザイン・開発しました",
+                    text: "あなたのアイデアを形にしませんか？",
+                    desc: "共に、特別なものを創り上げましょう。",
+                    made: "ゼロからデザイン・開発しました",
                     copyright: "John Lloyd Serrano",
                     domain: "johnlloydserrano.com",
                 }
             }
         },
         button: {
-            linkedIn: "LinkedInを見る",
+            linkedIn: "LinkedInを閲覧",
             skillSheet: "スキルシートをダウンロード",
-            resume: "職務経歴書をダウンロード",
+            resume: "履歴書をダウンロード",
             work: "お問い合わせ",
             project: "プロジェクトを始める",
-            contact: "メッセージを送信",
+            contact: "メッセージを送る",
             header: "プロジェクトを始める",
-            footer: "今すぐプロジェクトを開始",
+            footer: "今すぐプロジェクトを始めましょう",
         },
         form: {
             contact: {

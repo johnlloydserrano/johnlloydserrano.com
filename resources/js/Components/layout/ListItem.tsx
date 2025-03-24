@@ -24,7 +24,7 @@ export default function ListItem({ logo, title, subtitle, description }: Props) 
             </div>
             <div className="w-4/5">
                 <ul className="list-none">
-                    <li className="leading-relaxed">
+                    <li className="leading-relaxed pl-6 md:pl-0">
                         <p className="quicksand-medium text-md">{title}</p>
                         {subtitle && <p className="quicksand-regular text-sm">{subtitle}</p>}
                         <p className="quicksand-regular text-title-sub text-sm">{description}</p>

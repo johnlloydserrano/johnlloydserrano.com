@@ -56,7 +56,7 @@ export default function Achievement({ achievementData, isLoading }: Props) {
                                                 </div>
                                                 <p className="w-full text-start px-2 space-y-2 pt-4">
                                                     <span className="quicksand-semibold text-lg line-clamp-1">{achievement.title}</span>
-                                                    <span className="line-clamp-6 text-sm quicksand-regular leading-relaxed text-justify">{achievement.description}</span>
+                                                    <span className="line-clamp-6 text-sm quicksand-regular leading-relaxed">{achievement.description}</span>
                                                 </p>
                                             </CardContent>
                                         </Card>
