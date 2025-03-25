@@ -23,7 +23,7 @@
         "react-dom": "^19.0.0",
         "tailwindcss": "^4.0.15",
         "typescript": "^5.0.2",
-        "vite": "^6.0.11"
+        "vite": "^6.2.3"
     },
     "dependencies": {
         "@hookform/resolvers": "^4.1.3",
