@@ -1,9 +1,9 @@
 import { useParticles } from "@/hooks/use-particles";
-import { Button } from "../ui/button";
 import { Handshake, Rocket } from "lucide-react";
 import { HOME } from "@/constants/home";
 import { useTranslation } from "react-i18next";
 import Particles from "@tsparticles/react";
+import { CTAButton } from "@/Components/CTAButton";
 
 interface Props {
     heroData: Hero;
@@ -18,7 +18,11 @@ export default function HeroSection({ heroData, isLoading }: Props) {
         <div className="hero-wrapper min-h-screen h-full relative overflow-hidden select-none flex flex-col justify-center items-center mx-auto">
             {init && (
                 <div className="absolute inset-0 z-0 pointer-events-none h-full w-full overflow-hidden">
-                    <Particles id="heroParticles" className="h-full w-full" options={options} />
+                    <Particles
+                        id="heroParticles"
+                        className="h-full w-full"
+                        options={options}
+                    />
                 </div>
             )}
             <section className="relative px-8 xl:px-24 mx-auto w-full flex flex-col items-center justify-center py-12 text-center">
@@ -34,26 +38,19 @@ export default function HeroSection({ heroData, isLoading }: Props) {
                             style={{ backgroundImage: `url(${heroData.imageUrl})` }}
                         />
                         <div className="mt-6 w-full flex flex-col sm:flex-row justify-center items-center gap-4">
-                            <Button
-                                className="w-full sm:w-auto px-6 py-3 relative overflow-hidden group"
+                            <CTAButton
+                                icon={Handshake}
                                 variant="primary"
                             >
-                                <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
-                                <span className="relative z-10 flex items-center gap-2">
-                                    <Handshake />
-                                    {t(HOME.section.button.work)}
-                                </span>
-                            </Button>
-                            <Button
-                                className="w-full sm:w-auto px-6 py-3 relative overflow-hidden group"
+                                {t(HOME.section.button.work)}
+                            </CTAButton>
+
+                            <CTAButton
+                                icon={Rocket}
                                 variant="primary"
                             >
-                                <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-500 ease-out group-hover:w-full"></span>
-                                <span className="relative z-10 flex items-center gap-2">
-                                    <Rocket />
-                                    {t(HOME.section.button.project)}
-                                </span>
-                            </Button>
+                                {t(HOME.section.button.project)}
+                            </CTAButton>
                         </div>
                     </div>
                     <div className="w-full lg:w-1/2 p-4 mt-10 lg:mt-0">
