@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { HOME } from "@/constants/home";
-import { Card, CardContent } from "@/Components/ui/card";
-import { Check } from "lucide-react";
 import SectionHeader from "@/Components/layout/SectionHeader";
+import CardList from "@/Components/CardList";
 
 interface Props {
     serviceData: Service[];
@@ -26,21 +25,7 @@ export default function Service({ serviceData, isLoading }: Props) {
                     <SectionHeader title={t(HOME.section.title.service)} />
 
                     <div className="w-full py-6">
-                        <Card className="rounded-md border shadow-none border-none">
-                            <CardContent className="px-4">
-                                <ul className="space-y-4">
-                                    {serviceData?.map((service, index) => (
-                                        <li
-                                            key={index}
-                                            className="flex items-start gap-3 space-y-2.5 leading-relaxed mb-2"
-                                        >
-                                            <Check className="text-accent min-w-[20px] min-h-[20px]" />
-                                            <span className="quicksand-regular">{service.description}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </CardContent>
-                        </Card>
+                        <CardList listData={serviceData} />
                     </div>
                 </motion.div>
             </div>

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { HOME } from "@/constants/home";
-import { Button } from "@/Components/ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
 import { EducationAndWorkExperienceSkeleton } from "@/Components/layout/HomeSkeleton";
-import ListItem from "@/Components/layout/ListItem";
+import CardList from "@/Components/CardList";
 import SectionHeader from "@/Components/layout/SectionHeader";
+import { CTAButton } from "@/Components/CTAButton";
 
 interface Props {
     educationData: Education[];
@@ -19,7 +19,7 @@ export default function EducationAndWorkExperience({ educationData, workExperien
     return (
         <section>
             <div className="education-and-work-wrapper bg-white">
-                <div className="xl:px-24 mx-auto py-6">
+                <div className="xl:px-24 mx-auto pt-6 pb-12">
                     <motion.div
                         className="h-full w-full"
                         initial={{ opacity: 0 }}
@@ -35,7 +35,7 @@ export default function EducationAndWorkExperience({ educationData, workExperien
                                         <EducationAndWorkExperienceSkeleton />
                                     ) : (
                                         educationData?.map(({ id, logo, school, degree, year }) => (
-                                            <ListItem
+                                            <CardList
                                                 key={id}
                                                 logo={logo}
                                                 title={school}
@@ -54,7 +54,7 @@ export default function EducationAndWorkExperience({ educationData, workExperien
                                         <EducationAndWorkExperienceSkeleton />
                                     ) : (
                                         workExperienceData?.map(({ id, logo, company, role, period }) => (
-                                            <ListItem
+                                            <CardList
                                                 key={id}
                                                 logo={logo}
                                                 title={company}
@@ -68,14 +68,18 @@ export default function EducationAndWorkExperience({ educationData, workExperien
                         </div>
 
                         <div className="flex justify-center items-center py-6">
-                            <a href="https://linkedin.com/in/jl-serrano" rel="noopener noreferrer" target="_blank" className="w-auto relative overflow-hidden group">
-                                <Button className="w-auto relative overflow-hidden group" variant="primary">
-                                    <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
-                                    <span className="relative z-10 flex items-center gap-2">
-                                        <SquareArrowOutUpRight />
-                                        {t(HOME.section.button.linkedIn)}
-                                    </span>
-                                </Button>
+                            <a
+                                href="https://linkedin.com/in/jl-serrano"
+                                rel="noopener noreferrer"
+                                target="_blank"
+                                className="w-auto relative overflow-hidden group"
+                            >
+                                <CTAButton
+                                    variant="primary"
+                                    icon={SquareArrowOutUpRight}
+                                >
+                                    {t(HOME.section.button.linkedIn)}
+                                </CTAButton>
                             </a>
                         </div>
                     </motion.div>

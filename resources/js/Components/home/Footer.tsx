@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ArrowRight, Heart, Rocket } from "lucide-react";
+import { ArrowRight, Rocket } from "lucide-react";
 import { Button } from "@/Components/ui/button";
 import { useParticles } from "@/hooks/use-particles";
 import { Link } from "@inertiajs/react";
