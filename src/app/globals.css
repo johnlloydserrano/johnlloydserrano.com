@@ -1,1 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@plugin "@tailwindcss/forms";
+
 @import 'tailwindcss';
+@import 'tw-animate-css';
+
+@theme {
+  --font-acorn: 'Acorn', 'sans-serif';
+  --color-background: #fdfbfb;
+  --color-primary: #e30022bf;
+  --color-secondary: #e97239;
+  --color-accent: #ff778b;
+  --color-foreground: #252525;
+  --color-title-sub: #737373;
+  --text-xxl-responsive: clamp(3.2rem, 0.5692rem + 8.238vw, 7.75rem);
+  --text-xl-responsive: clamp(3.2rem, 0.5692rem + 8.238vw, 5.75rem);
+}
+
+@layer base {
+  @font-face {
+    font-family: 'Acorn';
+    src: url('/fonts/acorn-8.ttf');
+    font-weight: 800;
+    font-style: normal;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    margin: 0 !important;
+    min-width: 375px;
+    font-family: 'Quicksand', sans-serif;
+  }
+}
+
+.quicksand-thin {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+.quicksand-regular {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+.quicksand-medium {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+.quicksand-semibold {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
+.quicksand-thin-italic {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+.quicksand-regular-italic {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.quicksand-medium-italic {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.quicksand-bold-italic {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.caveat-regular {
+  font-family: 'Caveat', cursive;
+  font-weight: 400;
+}
+.caveat-bold {
+  font-family: 'Caveat', cursive;
+  font-weight: 700;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-background) inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0px 1000px var(--color-background) inset !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+.color-effect {
+  background: linear-gradient(
+    120deg,
+    var(--color-primary),
+    var(--color-secondary)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
