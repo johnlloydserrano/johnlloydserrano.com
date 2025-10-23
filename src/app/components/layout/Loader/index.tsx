@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import { heroData } from '@/app/data/data';
 import { motion } from 'framer-motion';

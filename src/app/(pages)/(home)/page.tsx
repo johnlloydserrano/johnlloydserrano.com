@@ -2,7 +2,6 @@
 
 import {
   educationData,
-  heroData,
   personalProjectData,
   sectionData,
   serviceData,
@@ -20,33 +19,39 @@ import PersonalProjectSection from '../components/Sections/PersonalProject';
 import Contact from '../components/Sections/Contact';
 import Footer from '@/app/components/layout/Footer';
 import Header from '@/app/components/layout/Header';
+import useHero from '../components/Sections/Hero/useHero';
+import PageLoader from '@/app/components/layout/Loader';
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+  const { hero, isLoading: isLoadingHero } = useHero();
+
+  const [isPageLoading, setIsPageLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000);
+    const timer = setTimeout(() => setIsPageLoading(false), 1200);
+    return () => clearTimeout(timer);
   }, []);
+
+  if (isPageLoading || isLoadingHero) {
+    return <PageLoader />;
+  }
 
   return (
     <div className="page-wrapper">
       <Header sectionData={sectionData} />
-      <HeroSection heroData={heroData} isLoading={isLoading} />
+      <HeroSection heroData={hero} isLoading={isLoadingHero} />
       <EducationAndWorkExperienceSection
         educationData={educationData}
         workExperienceData={workExperienceData}
-        isLoading={isLoading}
+        isLoading={false}
       />
-      <SkillSection skillData={skillData} isLoading={isLoading} />
-      <ServiceSection serviceData={serviceData} isLoading={isLoading} />
+      <SkillSection skillData={skillData} isLoading={false} />
+      <ServiceSection serviceData={serviceData} isLoading={false} />
       <PersonalProjectSection
         personalProjectData={personalProjectData}
-        isLoading={isLoading}
+        isLoading={false}
       />
-      <AchievementSection
-        achievementData={timelineData}
-        isLoading={isLoading}
-      />
+      <AchievementSection achievementData={timelineData} isLoading={false} />
       <Contact />
       <Footer />
     </div>
