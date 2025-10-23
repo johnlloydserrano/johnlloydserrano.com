@@ -22,7 +22,7 @@ export default function SkillSection({
   };
 
   return (
-    <div className="skill-wrapper">
+    <div id="skills" className="skill-wrapper">
       <div className="xl:px-24 mx-auto pt-6 pb-12">
         <motion.div
           className="skill-box p-6"

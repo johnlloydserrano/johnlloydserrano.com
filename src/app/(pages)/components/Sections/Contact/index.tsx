@@ -7,7 +7,7 @@ import { socialLinksData } from '@/app/data/data';
 
 export default function Contact() {
   return (
-    <section className="w-full pb-6">
+    <section id="contact" className="w-full pb-6">
       <div className="xl:px-24 mx-auto py-6">
         <motion.div
           className="h-full w-full"

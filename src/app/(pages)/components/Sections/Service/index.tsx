@@ -10,7 +10,7 @@ interface ServiceSectionProps {
 
 export default function ServiceSection({ serviceData }: ServiceSectionProps) {
   return (
-    <div className="service-wrapper bg-white">
+    <div id="services" className="service-wrapper bg-white">
       <div className="xl:px-24 mx-auto py-6">
         <motion.div
           className="skill-box p-6"

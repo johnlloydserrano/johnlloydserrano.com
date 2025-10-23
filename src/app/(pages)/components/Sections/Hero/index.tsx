@@ -13,7 +13,10 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
   const { init, options } = useParticles();
 
   return (
-    <div className="hero-wrapper min-h-screen h-full relative overflow-hidden select-none flex flex-col justify-center items-center mx-auto">
+    <div
+      id="hero"
+      className="hero-wrapper min-h-screen h-full relative overflow-hidden select-none flex flex-col justify-center items-center mx-auto"
+    >
       {init && (
         <div className="absolute inset-0 z-0 pointer-events-none h-full w-full overflow-hidden">
           <Particles

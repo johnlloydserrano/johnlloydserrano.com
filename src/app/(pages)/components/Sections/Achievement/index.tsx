@@ -12,7 +12,7 @@ export default function AchievementSection({
   achievementData,
 }: AchievementSectionProps) {
   return (
-    <div className="achievement-wrapper bg-white">
+    <div id="achievements" className="achievement-wrapper bg-white">
       <div className="xl:px-24 mx-auto pt-6 pb-12">
         <motion.div
           className="skill-box p-6"
