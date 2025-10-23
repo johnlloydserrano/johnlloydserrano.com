@@ -20,7 +20,7 @@ export default function EducationAndWorkExperienceSection({
 }: EducationAndWorkExperienceSectionProps) {
   return (
     <section>
-      <div className="education-and-work-wrapper bg-white">
+      <div id="experience" className="education-and-work-wrapper bg-white">
         <div className="xl:px-24 mx-auto pt-6 pb-12">
           <motion.div
             className="h-full w-full"

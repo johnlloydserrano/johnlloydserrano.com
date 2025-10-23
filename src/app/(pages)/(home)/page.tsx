@@ -4,6 +4,7 @@ import {
   educationData,
   heroData,
   personalProjectData,
+  sectionData,
   serviceData,
   skillData,
   timelineData,
@@ -18,6 +19,7 @@ import AchievementSection from '../components/Sections/Achievement';
 import PersonalProjectSection from '../components/Sections/PersonalProject';
 import Contact from '../components/Sections/Contact';
 import Footer from '@/app/components/layout/Footer';
+import Header from '@/app/components/layout/Header';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -28,6 +30,7 @@ export default function Home() {
 
   return (
     <div className="page-wrapper">
+      <Header sectionData={sectionData} />
       <HeroSection heroData={heroData} isLoading={isLoading} />
       <EducationAndWorkExperienceSection
         educationData={educationData}

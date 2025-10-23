@@ -14,7 +14,7 @@ export default function PersonalProjectSection({
   isLoading,
 }: PersonalProjectSectionProps) {
   return (
-    <div className="personal-project-wrapper">
+    <div id="personal-projects" className="personal-project-wrapper">
       <div className="xl:px-24 mx-auto pt-6 pb-12">
         <motion.div
           className="skill-box p-6"
