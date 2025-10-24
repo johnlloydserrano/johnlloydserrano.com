@@ -24,7 +24,7 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-modules-
-      - name: Create empty amplify_outputs.json
+      - name: Initialize amplify_outputs.json
         run: |
           echo "{}" > amplify_outputs.json
       - name: Run Build

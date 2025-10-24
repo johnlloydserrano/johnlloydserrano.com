@@ -1,7 +1,7 @@
 import { SocialLink } from '@/models/socialLinks/types';
 
 interface Props {
-  socialMediaData: SocialLink[];
+  socialMediaData: SocialLink[] | null;
 }
 
 export default function SocialMediaList({ socialMediaData }: Props) {
@@ -9,7 +9,7 @@ export default function SocialMediaList({ socialMediaData }: Props) {
     <div className="h-[50%] w-full p-6 rounded-md space-y-6">
       <h4 className="font-medium">Social Media</h4>
       <div className="flex space-x-4">
-        {socialMediaData.map((social, index) => (
+        {socialMediaData?.map((social, index) => (
           <a
             key={index}
             href={social.url}

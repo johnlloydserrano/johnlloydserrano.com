@@ -5,7 +5,7 @@ import { CardListGrids } from '../components/CardListGrid';
 import { PersonalProject } from '@/models/personalProjects/types';
 
 interface PersonalProjectSectionProps {
-  personalProjectData: PersonalProject[];
+  personalProjectData: PersonalProject[] | null;
   isLoading: boolean;
 }
 
@@ -28,7 +28,7 @@ export default function PersonalProjectSection({
             {isLoading ? (
               <PersonalProjectSkeleton />
             ) : (
-              personalProjectData.length > 0 && (
+              !!personalProjectData?.length && (
                 <CardListGrids
                   data={personalProjectData}
                   withDescription

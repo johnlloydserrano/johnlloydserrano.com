@@ -4,7 +4,7 @@ import CardList from '../components/CardList';
 import { Service } from '@/models/services/types';
 
 interface ServiceSectionProps {
-  serviceData: Service[];
+  serviceData: Service[] | null;
   isLoading: boolean;
 }
 

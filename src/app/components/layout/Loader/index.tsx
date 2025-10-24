@@ -1,9 +1,11 @@
 'use client';
 
-import { heroData } from '@/app/data/data';
+import useHero from '@/app/(pages)/components/Sections/Hero/useHero';
 import { motion } from 'framer-motion';
 
 export default function Loader() {
+  const { hero: heroData } = useHero();
+
   return (
     <motion.div
       className="fixed inset-0 flex items-center justify-center bg-white z-50"
@@ -15,9 +17,9 @@ export default function Loader() {
       <div
         className="h-12 w-12 rounded-full bg-center bg-cover bg-no-repeat"
         style={{
-          backgroundImage: `url(${heroData.imageUrl})`,
+          backgroundImage: `url(${heroData?.imageUrl})`,
         }}
-        aria-label={heroData.name}
+        aria-label={heroData?.name}
         role="img"
       />
     </motion.div>

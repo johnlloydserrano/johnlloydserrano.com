@@ -1,38 +1,44 @@
 'use client';
 
-import {
-  educationData,
-  personalProjectData,
-  sectionData,
-  serviceData,
-  skillData,
-  timelineData,
-  workExperienceData,
-} from '@/app/data/data';
+import { sectionData } from '@/app/data/data';
 import { useEffect, useState } from 'react';
-import HeroSection from '../components/Sections/Hero';
-import EducationAndWorkExperienceSection from '../components/Sections/EducationAndWorkExperience';
-import SkillSection from '../components/Sections/Skill';
-import ServiceSection from '../components/Sections/Service';
-import AchievementSection from '../components/Sections/Achievement';
-import PersonalProjectSection from '../components/Sections/PersonalProject';
-import Contact from '../components/Sections/Contact';
-import Footer from '@/app/components/layout/Footer';
+import {
+  AchievementSection,
+  ContactSection,
+  EducationAndWorkExperienceSection,
+  HeroSection,
+  PersonalProjectSection,
+  ServiceSection,
+  SkillSection,
+  useAchievement,
+  useEducationAndWorkExperience,
+  useHero,
+  usePersonalProject,
+  useService,
+  useSkill,
+} from '../components/Sections';
 import Header from '@/app/components/layout/Header';
-import useHero from '../components/Sections/Hero/useHero';
+import Footer from '@/app/components/layout/Footer';
 import PageLoader from '@/app/components/layout/Loader';
 
 export default function Home() {
   const { hero, isLoading: isLoadingHero } = useHero();
+  const { education, workExperience, isLoading } =
+    useEducationAndWorkExperience();
+  const { skills, isLoading: isLoadingSkills } = useSkill();
+  const { services, isLoading: isLoadingServices } = useService();
+  const { personalProjects, isLoading: isLoadingPersonalProjects } =
+    usePersonalProject();
+  const { achievements, isLoading: isLoadingAchievements } = useAchievement();
 
   const [isPageLoading, setIsPageLoading] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsPageLoading(false), 1200);
+    const timer = setTimeout(() => setIsPageLoading(false), 1000);
     return () => clearTimeout(timer);
   }, []);
 
-  if (isPageLoading || isLoadingHero) {
+  if (isPageLoading) {
     return <PageLoader />;
   }
 
@@ -41,18 +47,21 @@ export default function Home() {
       <Header sectionData={sectionData} />
       <HeroSection heroData={hero} isLoading={isLoadingHero} />
       <EducationAndWorkExperienceSection
-        educationData={educationData}
-        workExperienceData={workExperienceData}
-        isLoading={false}
+        educationData={education}
+        workExperienceData={workExperience}
+        isLoading={isLoading}
       />
-      <SkillSection skillData={skillData} isLoading={false} />
-      <ServiceSection serviceData={serviceData} isLoading={false} />
+      <SkillSection skillData={skills} isLoading={isLoadingSkills} />
+      <ServiceSection serviceData={services} isLoading={isLoadingServices} />
       <PersonalProjectSection
-        personalProjectData={personalProjectData}
-        isLoading={false}
+        personalProjectData={personalProjects}
+        isLoading={isLoadingPersonalProjects}
       />
-      <AchievementSection achievementData={timelineData} isLoading={false} />
-      <Contact />
+      <AchievementSection
+        achievementData={achievements}
+        isLoading={isLoadingAchievements}
+      />
+      <ContactSection />
       <Footer />
     </div>
   );

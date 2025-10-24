@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Section } from '@/models/sections/types';
 import Link from 'next/link';
-import { heroData } from '@/app/data/data';
 import { Button } from '../../atoms/Button';
 import { cn } from '@/libs/utils';
 import { useHeader } from '@/app/hooks/useHeader';
+import useHero from '@/app/(pages)/components/Sections/Hero/useHero';
 
 interface Props {
   sectionData: Section[];
@@ -16,6 +16,7 @@ interface Props {
 export default function Header({ sectionData }: Props) {
   const { state, toggleMenu, handleScroll } = useHeader();
   const { hidden, menuOpen, isFirstRender } = state;
+  const { hero: heroData } = useHero();
 
   return (
     <>
@@ -40,9 +41,9 @@ export default function Header({ sectionData }: Props) {
             <div
               className="h-12 w-12 rounded-full bg-center bg-cover bg-no-repeat"
               style={{
-                backgroundImage: `url(${heroData.imageUrl})`,
+                backgroundImage: `url(${heroData?.imageUrl})`,
               }}
-              aria-label={heroData.name}
+              aria-label={heroData?.name}
               role="img"
             />
             <span className="caveat-bold text-lg">John Lloyd Serrano</span>

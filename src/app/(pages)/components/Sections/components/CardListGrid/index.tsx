@@ -3,7 +3,7 @@ import { CardListGrid } from '@/models/cards/types';
 import Link from 'next/link';
 
 interface CardListGridsProps {
-  data: CardListGrid[];
+  data: CardListGrid[] | null;
   withDescription?: boolean;
   withLink?: boolean;
   linkRoute?: (slug: string) => string;
@@ -21,7 +21,7 @@ export const CardListGrids = ({
 }: CardListGridsProps) => {
   return (
     <div className={`w-full grid gap-4 p-4 py-6 ${gridClasses}`}>
-      {data.map((item, index) => {
+      {data?.map((item, index) => {
         const card = (
           <Card
             key={index}
