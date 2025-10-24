@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
+import { QueryContext } from './context/QueryContext';
 
 export const metadata: Metadata = {
   title: 'John Lloyd Serrano',
@@ -96,7 +97,9 @@ export default function RootLayout({
         </Script>
       </head>
 
-      <body>{children}</body>
+      <body>
+        <QueryContext>{children}</QueryContext>
+      </body>
     </html>
   );
 }

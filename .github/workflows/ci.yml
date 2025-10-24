@@ -1,7 +1,7 @@
 name: CI
 on:
   pull_request:
-    branches: [main]
+    branches: [main, staging]
   workflow_dispatch:
 jobs:
   tests:
@@ -24,5 +24,8 @@ jobs:
           path: "**/node_modules"
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
           restore-keys: ${{ runner.os }}-modules-
+      - name: Initialize amplify_outputs.json
+        run: |
+          echo "{}" > amplify_outputs.json
       - name: Run Build
         run: yarn build

@@ -4,7 +4,7 @@ import CarouselList from '../components/CarouselList';
 import { Timeline } from '@/models/timelines/types';
 
 interface AchievementSectionProps {
-  achievementData: Timeline[];
+  achievementData: Timeline[] | null;
   isLoading: boolean;
 }
 

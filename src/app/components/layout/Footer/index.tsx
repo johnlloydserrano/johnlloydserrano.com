@@ -3,10 +3,11 @@ import Particles from '@tsparticles/react';
 import { useParticles } from '@/app/hooks/useParticles';
 import { Button } from '../../atoms/Button';
 import Link from 'next/link';
-import { heroData } from '@/app/data/data';
+import useHero from '@/app/(pages)/components/Sections/Hero/useHero';
 
 export default function Footer() {
   const { init, options } = useParticles();
+  const { hero: heroData } = useHero();
 
   return (
     <div className="relative w-full select-none border-t bg-linear-to-b from-white to-background/80 backdrop-blur-md">
@@ -49,9 +50,9 @@ export default function Footer() {
               <div
                 className="h-12 w-12 rounded-full bg-center bg-cover bg-no-repeat"
                 style={{
-                  backgroundImage: `url(${heroData.imageUrl})`,
+                  backgroundImage: `url(${heroData?.imageUrl})`,
                 }}
-                aria-label={heroData.name}
+                aria-label={heroData?.name}
                 role="img"
               />
               <span className="caveat-bold text-lg">John Lloyd Serrano</span>

@@ -8,8 +8,8 @@ import { WorkExperience } from '@/models/workExperiences/types';
 import { Button } from '@/app/components/atoms/Button';
 
 interface EducationAndWorkExperienceSectionProps {
-  educationData: Education[];
-  workExperienceData: WorkExperience[];
+  educationData: Education[] | null;
+  workExperienceData: WorkExperience[] | null;
   isLoading: boolean;
 }
 
