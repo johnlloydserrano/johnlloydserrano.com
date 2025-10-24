@@ -8,7 +8,7 @@ interface CardListProps {
   title?: string;
   subtitle?: string;
   description?: string;
-  listData?: Service[];
+  listData?: Service[] | null;
   icon?: ReactNode;
 }
 
@@ -18,7 +18,7 @@ export default function CardList({
   subtitle,
   description,
   listData,
-  icon = <Check className="text-accent min-w-[20px] min-h-[20px]" />,
+  icon = <Check className="text-accent min-w-5 min-h-5" />,
 }: CardListProps) {
   if (listData && listData.length > 0) {
     return (

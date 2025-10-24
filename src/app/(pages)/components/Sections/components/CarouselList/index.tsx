@@ -9,7 +9,7 @@ import { Timeline } from '@/models/timelines/types';
 import Autoplay from 'embla-carousel-autoplay';
 
 interface CarouselProps {
-  achievementData: Timeline[];
+  achievementData: Timeline[] | null;
 }
 
 export default function CarouselList({ achievementData }: CarouselProps) {
@@ -27,7 +27,7 @@ export default function CarouselList({ achievementData }: CarouselProps) {
       className="w-full p-4 select-none mb-6"
     >
       <CarouselContent>
-        {achievementData.map((achievement, index) => (
+        {achievementData?.map((achievement, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
               <Card className="shadow-none p-0 border-none rounded-none">

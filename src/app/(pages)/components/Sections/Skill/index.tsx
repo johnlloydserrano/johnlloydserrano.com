@@ -7,7 +7,7 @@ import { Skill } from '@/models/skills/types';
 import { Button } from '@/app/components/atoms/Button';
 
 interface SkillSectionProps {
-  skillData: Skill[];
+  skillData: Skill[] | null;
   isLoading: boolean;
 }
 
