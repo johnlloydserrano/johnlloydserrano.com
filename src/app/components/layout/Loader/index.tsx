@@ -1,11 +1,9 @@
 'use client';
 
-import useHero from '@/app/(pages)/components/Sections/Hero/useHero';
+import { heroData } from '@/app/data/data';
 import { motion } from 'framer-motion';
 
 export default function Loader() {
-  const { hero: heroData } = useHero();
-
   return (
     <motion.div
       className="fixed inset-0 flex items-center justify-center bg-white z-50"

@@ -3,11 +3,9 @@ import SectionHeader from '../components/SectionHeader';
 import ContactForm from '../components/ContactForm';
 import ContactInfo from '../components/ContactInfo';
 import SocialMediaList from '../components/SocialMediaList';
-import useSocialLink from './useContact';
+import { socialLinksData } from '@/app/data/data';
 
 export default function ContactSection() {
-  const { socialLinks } = useSocialLink();
-
   return (
     <section id="contact" className="w-full pb-6">
       <div className="xl:px-24 mx-auto py-6">
@@ -29,7 +27,7 @@ export default function ContactSection() {
               </div>
               <div className="w-full md:w-[25%] flex flex-col justify-start mt-6 space-y-4">
                 <ContactInfo />
-                <SocialMediaList socialMediaData={socialLinks} />
+                <SocialMediaList socialMediaData={socialLinksData} />
               </div>
             </div>
           </div>

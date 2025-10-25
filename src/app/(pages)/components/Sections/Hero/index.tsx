@@ -6,7 +6,6 @@ import { Button } from '@/app/components/atoms/Button';
 
 interface HeroSectionProps {
   heroData: Hero | null;
-  isLoading: boolean;
 }
 
 export default function HeroSection({ heroData }: HeroSectionProps) {

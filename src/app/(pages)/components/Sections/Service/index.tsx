@@ -5,7 +5,6 @@ import { Service } from '@/models/services/types';
 
 interface ServiceSectionProps {
   serviceData: Service[] | null;
-  isLoading: boolean;
 }
 
 export default function ServiceSection({ serviceData }: ServiceSectionProps) {
