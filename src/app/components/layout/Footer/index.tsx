@@ -24,9 +24,11 @@ export default function Footer() {
           <div className="flex space-x-3 items-center">
             <Rocket size={48} className="text-black" />
             <div className="space-y-1 text-center sm:text-left">
-              <h3 className="text-base quicksand-medium">Ready To bring</h3>
+              <h3 className="text-base quicksand-medium">
+                Ready to bring your ideas to life?
+              </h3>
               <p className="text-sm text-title-sub quicksand-regular">
-                Together
+                Let’s build something amazing together.
               </p>
             </div>
           </div>
@@ -37,7 +39,7 @@ export default function Footer() {
           >
             <span className="absolute left-0 top-0 h-full w-full bg-linear-to-tr from-primary to-accent"></span>
             <span className="relative z-10 flex items-center gap-2">
-              Start
+              Get Started
               <ArrowRight />
             </span>
           </Button>
@@ -63,6 +65,15 @@ export default function Footer() {
               <Link href="#" className="z-10 flex items-center gap-2">
                 Privacy Policy
               </Link>
+            </p>
+            <p className="text-sm text-title-sub quicksand-regular">
+              <a
+                href="https://github.com/johnlloydserrano/johnlloydserrano.com"
+                rel="noopener noreferrer"
+                className="hover:underline hover:decoration-primary"
+              >
+                View Source on GitHub
+              </a>
             </p>
           </div>
         </div>

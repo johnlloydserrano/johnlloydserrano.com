@@ -4,7 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Section } from '@/models/sections/types';
 import Link from 'next/link';
-import { Button } from '../../atoms/Button';
 import { cn } from '@/libs/utils';
 import { useHeader } from '@/app/hooks/useHeader';
 import { heroData } from '@/app/data/data';
@@ -71,24 +70,13 @@ export default function Header({ sectionData }: Props) {
             ))}
           </nav>
 
-          <div className="flex items-center gap-4">
-            <Button
-              className="hidden sm:block text-xs px-3! py-0!"
-              variant="primary"
-            >
-              <span className="relative z-10 flex items-center gap-2">
-                Start your Project
-              </span>
-            </Button>
-
-            <button
-              className="lg:hidden"
-              onClick={() => toggleMenu()}
-              aria-label="Toggle menu"
-            >
-              {menuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+          <button
+            className="lg:hidden"
+            onClick={() => toggleMenu()}
+            aria-label="Toggle menu"
+          >
+            {menuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
         </div>
       </motion.div>
 
