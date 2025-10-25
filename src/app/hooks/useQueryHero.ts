@@ -1,14 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { generateClient } from 'aws-amplify/data';
-import { Schema } from '../../../amplify/data/resource';
 import { Hero, HeroSchema } from '@/models/heroes/types';
-import { AmplifyConfig } from '@/libs/config';
+import { client } from '@/libs/amplifyConfig';
 
 export const QUERY_HERO_KEY = 'QUERY_HERO_KEY';
-
-AmplifyConfig();
-
-const client = generateClient<Schema>();
 
 const transformHeroResponse = (hero: HeroSchema): Hero => ({
   id: hero.id ?? '',

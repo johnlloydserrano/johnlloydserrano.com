@@ -1,14 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { generateClient } from 'aws-amplify/data';
-import { Schema } from '../../../amplify/data/resource';
-import { AmplifyConfig } from '@/libs/config';
 import type { Timeline, TimelineSchema } from '@/models/timelines/types';
+import { client } from '@/libs/amplifyConfig';
 
 export const QUERY_TIMELINE_KEY = 'QUERY_TIMELINE';
-
-AmplifyConfig();
-
-const client = generateClient<Schema>();
 
 const transformTimelineResponse = (timeline: TimelineSchema): Timeline => ({
   id: timeline.id ?? '',

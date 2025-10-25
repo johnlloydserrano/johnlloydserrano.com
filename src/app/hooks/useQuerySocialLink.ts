@@ -1,14 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { generateClient } from 'aws-amplify/data';
-import { Schema } from '../../../amplify/data/resource';
-import { AmplifyConfig } from '@/libs/config';
 import type { SocialLink, SocialLinkSchema } from '@/models/socialLinks/types';
+import { client } from '@/libs/amplifyConfig';
 
 export const QUERY_SOCIAL_LINK_KEY = 'QUERY_SOCIAL_LINK';
-
-AmplifyConfig();
-
-const client = generateClient<Schema>();
 
 const transformSocialLinkResponse = (link: SocialLinkSchema): SocialLink => ({
   id: link.name ?? '',

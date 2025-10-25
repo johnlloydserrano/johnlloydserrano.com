@@ -1,14 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { generateClient } from 'aws-amplify/data';
-import { Schema } from '../../../amplify/data/resource';
-import { AmplifyConfig } from '@/libs/config';
 import type { Service, ServiceSchema } from '@/models/services/types';
+import { client } from '@/libs/amplifyConfig';
 
 export const QUERY_SERVICE_KEY = 'QUERY_SERVICE';
-
-AmplifyConfig();
-
-const client = generateClient<Schema>();
 
 const transformServiceResponse = (service: ServiceSchema): Service => ({
   id: service.id ?? '',
