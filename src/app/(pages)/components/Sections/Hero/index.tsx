@@ -1,4 +1,4 @@
-import { Handshake, Rocket } from 'lucide-react';
+import { Handshake } from 'lucide-react';
 import Particles from '@tsparticles/react';
 import { useParticles } from '@/app/hooks/useParticles';
 import { Hero } from '@/models/heroes/types';
@@ -46,17 +46,6 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
                 <span className="relative z-10 flex items-center gap-2">
                   <Handshake />
                   Get In Touch
-                </span>
-              </Button>
-
-              <Button
-                className="rounded-full px-6 py-3 w-auto relative overflow-hidden group"
-                variant="primary"
-              >
-                <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
-                <span className="relative z-10 flex items-center gap-2">
-                  <Rocket />
-                  Start Your Project
                 </span>
               </Button>
             </div>
