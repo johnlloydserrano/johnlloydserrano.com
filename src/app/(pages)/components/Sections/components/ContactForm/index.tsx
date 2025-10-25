@@ -14,8 +14,9 @@ import {
 import { Input } from '@/app/components/atoms/Input';
 import { Textarea } from '@/app/components/atoms/TextArea';
 import { Button } from '@/app/components/atoms/Button';
-import { useCreateContactMessage } from '@/app/hooks/useCreateContactMessage';
 import { toast } from 'sonner';
+import useCreateContactMessage from '@/app/hooks/useCreateContactMessage';
+import useSendEmail from '@/app/hooks/useSendEmail';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -26,7 +27,10 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
-  const { mutateAsync, isPending } = useCreateContactMessage();
+  const { mutateAsync: createMessage, isPending: isPendingContactMessage } =
+    useCreateContactMessage();
+  const { mutateAsync: sendEmail, isPending: isPendingSendMail } =
+    useSendEmail();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -39,10 +43,13 @@ export default function ContactForm() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     try {
-      await mutateAsync(values);
+      await createMessage(values);
+      await sendEmail(values);
+
       toast.success('Message sent successfully!');
       form.reset();
-    } catch {
+    } catch (error) {
+      console.error(error);
       toast.error('Something went wrong. Please try again later.');
     }
   }
@@ -110,14 +117,16 @@ export default function ContactForm() {
         />
         <div className="absolute bottom-[-45px] w-full flex items-center py-6 justify-center">
           <Button
-            disabled={isPending}
+            disabled={isPendingContactMessage || isPendingSendMail}
             className="rounded-full w-auto relative overflow-hidden group"
             variant="primary"
           >
             <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
             <span className="relative z-10 flex items-center gap-2">
               <Send />
-              {isPending ? 'Sending...' : 'Send Message'}
+              {isPendingContactMessage || isPendingSendMail
+                ? 'Sending...'
+                : 'Send Message'}
             </span>
           </Button>
         </div>

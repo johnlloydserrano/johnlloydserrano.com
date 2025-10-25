@@ -1,14 +1,9 @@
 import { useMutation } from '@tanstack/react-query';
 import { client } from '@/libs/amplifyConfig';
 import { Schema } from '../../../amplify/data/resource';
+import { Contact } from '@/models/contacts/types';
 
-type CreateContactMessageInput = {
-  name: string;
-  email: string;
-  message: string;
-};
-
-const createContactMessage = async (input: CreateContactMessageInput) => {
+const createContactMessage = async (input: Contact) => {
   const { data, errors } = await client.models.ContactMessage.create(
     input as Schema['ContactMessage']['type']
   );
@@ -19,8 +14,10 @@ const createContactMessage = async (input: CreateContactMessageInput) => {
   return data;
 };
 
-export const useCreateContactMessage = () => {
+const useCreateContactMessage = () => {
   return useMutation({
     mutationFn: createContactMessage,
   });
 };
+
+export default useCreateContactMessage;
