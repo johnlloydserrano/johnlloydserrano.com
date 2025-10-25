@@ -1,6 +1,12 @@
 'use client';
 
-import { sectionData } from '@/app/data/data';
+import {
+  educationData,
+  heroData,
+  sectionData,
+  serviceData,
+  workExperienceData,
+} from '@/app/data/data';
 import {
   AchievementSection,
   ContactSection,
@@ -10,21 +16,14 @@ import {
   ServiceSection,
   SkillSection,
   useAchievement,
-  useEducationAndWorkExperience,
-  useHero,
   usePersonalProject,
-  useService,
   useSkill,
 } from '../components/Sections';
 import Header from '@/app/components/layout/Header';
 import Footer from '@/app/components/layout/Footer';
 
 export default function Home() {
-  const { hero, isLoading: isLoadingHero } = useHero();
-  const { education, workExperience, isLoading } =
-    useEducationAndWorkExperience();
   const { skills, isLoading: isLoadingSkills } = useSkill();
-  const { services, isLoading: isLoadingServices } = useService();
   const { personalProjects, isLoading: isLoadingPersonalProjects } =
     usePersonalProject();
   const { achievements, isLoading: isLoadingAchievements } = useAchievement();
@@ -32,14 +31,13 @@ export default function Home() {
   return (
     <div className="page-wrapper">
       <Header sectionData={sectionData} />
-      <HeroSection heroData={hero} isLoading={isLoadingHero} />
+      <HeroSection heroData={heroData} />
       <EducationAndWorkExperienceSection
-        educationData={education}
-        workExperienceData={workExperience}
-        isLoading={isLoading}
+        educationData={educationData}
+        workExperienceData={workExperienceData}
       />
       <SkillSection skillData={skills} isLoading={isLoadingSkills} />
-      <ServiceSection serviceData={services} isLoading={isLoadingServices} />
+      <ServiceSection serviceData={serviceData} />
       <PersonalProjectSection
         personalProjectData={personalProjects}
         isLoading={isLoadingPersonalProjects}

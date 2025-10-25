@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { SquareArrowOutUpRight } from 'lucide-react';
 import SectionHeader from '../components/SectionHeader';
-import { EducationAndWorkExperienceSkeleton } from '../../Skeletons';
 import CardList from '../components/CardList';
 import { Education } from '@/models/educations/types';
 import { WorkExperience } from '@/models/workExperiences/types';
@@ -10,13 +9,11 @@ import { Button } from '@/app/components/atoms/Button';
 interface EducationAndWorkExperienceSectionProps {
   educationData: Education[] | null;
   workExperienceData: WorkExperience[] | null;
-  isLoading: boolean;
 }
 
 export default function EducationAndWorkExperienceSection({
   educationData,
   workExperienceData,
-  isLoading,
 }: EducationAndWorkExperienceSectionProps) {
   return (
     <section>
@@ -33,38 +30,30 @@ export default function EducationAndWorkExperienceSection({
               <div className="w-full space-y-6">
                 <SectionHeader title="My Education" />
                 <div className="w-full grid grid-cols-1 gap-4 px-4">
-                  {isLoading ? (
-                    <EducationAndWorkExperienceSkeleton />
-                  ) : (
-                    educationData?.map(({ id, logo, school, degree, year }) => (
-                      <CardList
-                        key={id}
-                        logo={logo}
-                        title={school}
-                        subtitle={degree}
-                        description={year}
-                      />
-                    ))
-                  )}
+                  {educationData?.map(({ id, logo, school, degree, year }) => (
+                    <CardList
+                      key={id}
+                      logo={logo}
+                      title={school}
+                      subtitle={degree}
+                      description={year}
+                    />
+                  ))}
                 </div>
               </div>
 
               <div className="w-full space-y-6">
                 <SectionHeader title="My Work Experience" />
                 <div className="w-full grid grid-cols-1 gap-4 px-4">
-                  {isLoading ? (
-                    <EducationAndWorkExperienceSkeleton />
-                  ) : (
-                    workExperienceData?.map(
-                      ({ id, logo, company, role, period }) => (
-                        <CardList
-                          key={id}
-                          logo={logo}
-                          title={company}
-                          subtitle={role}
-                          description={period}
-                        />
-                      )
+                  {workExperienceData?.map(
+                    ({ id, logo, company, role, period }) => (
+                      <CardList
+                        key={id}
+                        logo={logo}
+                        title={company}
+                        subtitle={role}
+                        description={period}
+                      />
                     )
                   )}
                 </div>

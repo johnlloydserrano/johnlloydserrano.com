@@ -3,11 +3,10 @@ import Particles from '@tsparticles/react';
 import { useParticles } from '@/app/hooks/useParticles';
 import { Button } from '../../atoms/Button';
 import Link from 'next/link';
-import useHero from '@/app/(pages)/components/Sections/Hero/useHero';
+import { heroData } from '@/app/data/data';
 
 export default function Footer() {
   const { init, options } = useParticles();
-  const { hero: heroData } = useHero();
 
   return (
     <div className="relative w-full select-none border-t bg-linear-to-b from-white to-background/80 backdrop-blur-md">

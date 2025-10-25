@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Button } from '../../atoms/Button';
 import { cn } from '@/libs/utils';
 import { useHeader } from '@/app/hooks/useHeader';
-import useHero from '@/app/(pages)/components/Sections/Hero/useHero';
+import { heroData } from '@/app/data/data';
 
 interface Props {
   sectionData: Section[];
@@ -16,7 +16,6 @@ interface Props {
 export default function Header({ sectionData }: Props) {
   const { state, toggleMenu, handleScroll } = useHeader();
   const { hidden, menuOpen, isFirstRender } = state;
-  const { hero: heroData } = useHero();
 
   return (
     <>
