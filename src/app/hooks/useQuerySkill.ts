@@ -1,14 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { generateClient } from 'aws-amplify/data';
-import { Schema } from '../../../amplify/data/resource';
-import { AmplifyConfig } from '@/libs/config';
 import { Skill, SkillSchema } from '@/models/skills/types';
+import { client } from '@/libs/amplifyConfig';
 
 export const QUERY_SKILL_KEY = 'QUERY_SKILL';
-
-AmplifyConfig();
-
-const client = generateClient<Schema>();
 
 const transformSkillResponse = (skill: SkillSchema): Skill => ({
   id: skill.id ?? '',

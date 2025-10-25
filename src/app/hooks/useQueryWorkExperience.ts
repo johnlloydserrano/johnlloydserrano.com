@@ -1,17 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import { generateClient } from 'aws-amplify/data';
-import { Schema } from '../../../amplify/data/resource';
-import { AmplifyConfig } from '@/libs/config';
 import {
   WorkExperience,
   WorkExperienceSchema,
 } from '@/models/workExperiences/types';
+import { client } from '@/libs/amplifyConfig';
 
 export const QUERY_WORK_EXPERIENCE_KEY = 'QUERY_WORK_EXPERIENCE';
-
-AmplifyConfig();
-
-const client = generateClient<Schema>();
 
 const transformWorkExperienceResponse = (
   work: WorkExperienceSchema

@@ -1,14 +1,8 @@
 import { useQuery } from '@tanstack/react-query';
-import { generateClient } from 'aws-amplify/data';
-import { Schema } from '../../../amplify/data/resource';
-import { AmplifyConfig } from '@/libs/config';
 import { Education, EducationSchema } from '@/models/educations/types';
+import { client } from '@/libs/amplifyConfig';
 
 export const QUERY_EDUCATION_KEY = 'QUERY_EDUCATION';
-
-AmplifyConfig();
-
-const client = generateClient<Schema>();
 
 const transformEducationResponse = (education: EducationSchema): Education => ({
   id: education.id ?? '',
