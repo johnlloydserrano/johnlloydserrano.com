@@ -7,6 +7,7 @@ export interface PrivacyPolicyItem {
 
 export interface PrivacyPolicy {
   title: string;
+  site: string;
   description: string;
   items: PrivacyPolicyItem[];
   update: string;

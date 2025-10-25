@@ -44,3 +44,10 @@
   yarn dev
   # or
   pnpm dev
+  ```
+
+  ## ⭐ Please give my repo a star!
+
+  If you like my website, please consider giving this repository a star.  
+  Your support means a lot and helps others discover it too.
+  Thank you so much!
