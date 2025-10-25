@@ -14,6 +14,8 @@ import {
 import { Input } from '@/app/components/atoms/Input';
 import { Textarea } from '@/app/components/atoms/TextArea';
 import { Button } from '@/app/components/atoms/Button';
+import { useCreateContactMessage } from '@/app/hooks/useCreateContactMessage';
+import { toast } from 'sonner';
 
 const formSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
@@ -24,6 +26,8 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
+  const { mutateAsync, isPending } = useCreateContactMessage();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -33,9 +37,14 @@ export default function ContactForm() {
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    form.reset();
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    try {
+      await mutateAsync(values);
+      toast.success('Message sent successfully!');
+      form.reset();
+    } catch {
+      toast.error('Something went wrong. Please try again later.');
+    }
   }
 
   return (
@@ -101,13 +110,14 @@ export default function ContactForm() {
         />
         <div className="absolute bottom-[-45px] w-full flex items-center py-6 justify-center">
           <Button
+            disabled={isPending}
             className="rounded-full w-auto relative overflow-hidden group"
             variant="primary"
           >
             <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
             <span className="relative z-10 flex items-center gap-2">
               <Send />
-              Send Message
+              {isPending ? 'Sending...' : 'Send Message'}
             </span>
           </Button>
         </div>

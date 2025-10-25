@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
-import { QueryContext } from './context/QueryContext';
+import { QueryContext } from './contexts/QueryContext';
 
 export const metadata: Metadata = {
   title: 'John Lloyd Serrano',

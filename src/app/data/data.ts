@@ -177,6 +177,7 @@ export const socialLinksData: SocialLink[] = [
 
 export const privacyPolicyData: PrivacyPolicy = {
   title: 'Privacy Policy',
+  site: 'johnlloydserrano.com',
   description:
     'Your privacy is important to me. This Privacy Policy outlines how your personal information is collected, used, and protected when visiting and using this portfolio website ',
   items: [

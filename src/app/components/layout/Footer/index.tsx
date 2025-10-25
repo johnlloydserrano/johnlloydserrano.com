@@ -62,7 +62,10 @@ export default function Footer() {
 
           <div className="flex flex-col items-center md:items-end space-y-1.5">
             <p className="hover:underline hover:decoration-primary flex items-center text-title-sub quicksand-regular text-sm">
-              <Link href="#" className="z-10 flex items-center gap-2">
+              <Link
+                href="privacy-policy"
+                className="z-10 flex items-center gap-2"
+              >
                 Privacy Policy
               </Link>
             </p>
