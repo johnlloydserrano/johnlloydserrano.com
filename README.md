@@ -23,6 +23,12 @@
 
   ---
 
+  ## 📊 Infrastructure Diagram
+  
+  ![Diagram](https://cloudfront.johnlloydserrano.com/public/images/static/structure-diagram.png)
+
+  ---
+
   ## 🧩 Features
 
   - Responsive and modern layout  
