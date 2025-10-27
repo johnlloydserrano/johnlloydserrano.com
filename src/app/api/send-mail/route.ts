@@ -1,7 +1,6 @@
 import nodemailer from 'nodemailer';
 import { NextResponse } from 'next/server';
 
-//debug
 export async function POST(req: Request) {
   try {
     const { name, email, message } = await req.json();
@@ -44,16 +43,8 @@ export async function POST(req: Request) {
     });
 
     return NextResponse.json({ success: true });
-  } catch (err: any) {
-    // Full error logging
-    console.error('❌ Email send error:');
-    console.error('Message:', err?.message);
-    console.error('Stack:', err?.stack);
-    console.error('Code:', err?.code);
-    console.error('Response:', err?.response);
-    console.error('Command:', err?.command);
-    console.error('Full error object:', JSON.stringify(err, null, 2));
-
+  } catch (err) {
+    console.error('Email send error:', err);
     return NextResponse.json(
       { success: false, error: 'Failed to send email.' },
       { status: 500 }

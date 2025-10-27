@@ -9,6 +9,7 @@ frontend:
   phases:
     build:
       commands:
+        - env | grep -e SES_SMTP_HOST -e SES_SMTP_USER -e SES_SMTP_PASS -e SES_SMTP_SENDER -e SES_SMTP_ADMIN_RECIEVER >> .env.production
         - npm run build
   artifacts:
     baseDirectory: .next
