@@ -11,7 +11,7 @@ export default function Projects() {
   const { project, isLoading, error } = useProjects();
 
   if (isLoading) return <Loader />;
-  if (!error) {
+  if (error) {
     return (
       <div className="w-full h-full min-h-screen flex flex-col items-center justify-center font-acorn font-semibold color-effect text-2xl gap-y-6">
         {heroData?.imageUrl && (
