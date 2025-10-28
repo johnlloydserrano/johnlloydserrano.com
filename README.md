@@ -1,8 +1,8 @@
   # 🌐 John Lloyd Serrano — Personal Portfolio Website
 
-  > ⚠️ Note: This project is GNU GPLv3-licensed for learning purposes.  
-  > Please **do not directly copy or republish my website design**.  
-  > You’re welcome to explore the structure and learn from it.
+  > ⚠️ Note: This project is licensed under the **johnlloydserrano.com License v1** for educational purposes.  
+  > Please **do not directly copy or republish this website or its design**.  
+  > You are welcome to explore the structure, study the code, and learn from it, but any redistributed version must include **significant modifications and original content**.
 
   A personal portfolio website built with Next.js that shows my background, skills, and work as a web developer.
   The site includes my education, work experience, projects, services, certificates and achievements in a clean and well-organized design.

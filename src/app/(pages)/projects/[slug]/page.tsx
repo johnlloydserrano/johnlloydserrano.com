@@ -6,9 +6,57 @@ import { ArrowLeftIcon } from 'lucide-react';
 import Link from 'next/link';
 import useProjects from './useProjects';
 import Loader from '@/app/components/layout/Loader';
+import Head from 'next/head';
+import { useEffect } from 'react';
 
 export default function Projects() {
   const { project, isLoading, error } = useProjects();
+
+  useEffect(() => {
+    if (project) {
+      document.title = `${project.title} - John Lloyd Serrano`;
+
+      const metaDescription = document.querySelector(
+        'meta[name="description"]'
+      );
+      if (metaDescription)
+        metaDescription.setAttribute('content', project.overview || '');
+
+      const ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle)
+        ogTitle.setAttribute(
+          'content',
+          `${project.title} - John Lloyd Serrano`
+        );
+
+      const ogDescription = document.querySelector(
+        'meta[property="og:description"]'
+      );
+      if (ogDescription)
+        ogDescription.setAttribute('content', project.overview || '');
+
+      const ogImage = document.querySelector('meta[property="og:image"]');
+      if (ogImage)
+        ogImage.setAttribute('content', project.images?.banner || '');
+
+      const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twitterTitle)
+        twitterTitle.setAttribute(
+          'content',
+          `${project.title} - John Lloyd Serrano`
+        );
+
+      const twitterDescription = document.querySelector(
+        'meta[name="twitter:description"]'
+      );
+      if (twitterDescription)
+        twitterDescription.setAttribute('content', project.overview || '');
+
+      const twitterImage = document.querySelector('meta[name="twitter:image"]');
+      if (twitterImage)
+        twitterImage.setAttribute('content', project.images?.banner || '');
+    }
+  }, [project]);
 
   if (isLoading) return <Loader />;
   if (error) {
@@ -62,6 +110,22 @@ export default function Projects() {
 
   return (
     <>
+      <Head>
+        <meta name="description" content={project?.overview || ''} />
+        <meta
+          property="og:title"
+          content={`${project?.title} - John Lloyd Serrano`}
+        />
+        <meta property="og:description" content={project?.overview || ''} />
+        <meta property="og:image" content={project?.images?.banner || ''} />
+        <meta
+          name="twitter:title"
+          content={`${project?.title} - John Lloyd Serrano`}
+        />
+        <meta name="twitter:description" content={project?.overview || ''} />
+        <meta name="twitter:image" content={project?.images?.banner || ''} />
+      </Head>
+
       {images?.banner && (
         <div
           className="relative bg-[#FFEEEA] w-full min-h-screen h-full rounded-lg overflow-hidden"
@@ -89,7 +153,9 @@ export default function Projects() {
           <h1 className="text-5xl font-acorn font-bold color-effect">
             {title}
           </h1>
-          {overview && <p className="text-gray-700">{overview}</p>}
+          {overview && (
+            <p className="text-gray-700 whitespace-pre-line">{overview}</p>
+          )}
         </div>
 
         {objectives.length > 0 && (
@@ -143,7 +209,7 @@ export default function Projects() {
         {design && (
           <section className="space-y-2">
             <h2 className="text-2xl font-semibold">Design & User Experience</h2>
-            <p className="text-gray-700">{design}</p>
+            <p className="text-gray-700 whitespace-pre-line">{design}</p>
           </section>
         )}
 
@@ -161,7 +227,9 @@ export default function Projects() {
         {outcomes && (
           <section className="space-y-2">
             <h2 className="text-2xl font-semibold">Outcomes & Learnings</h2>
-            <p className="text-gray-700 whitespace-pre-line">{outcomes}</p>
+            <p className="text-gray-700 whitespace-pre-line">
+              {outcomes.replace(/\\n/g, '\n')}
+            </p>
           </section>
         )}
 
@@ -184,7 +252,7 @@ export default function Projects() {
         {conclusion && (
           <section className="space-y-2">
             <h2 className="text-2xl font-semibold">Conclusion</h2>
-            <p className="text-gray-700">{conclusion}</p>
+            <p className="text-gray-700 whitespace-pre-line">{conclusion}</p>
           </section>
         )}
       </div>
