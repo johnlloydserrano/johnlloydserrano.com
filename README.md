@@ -1,6 +1,6 @@
   # 🌐 John Lloyd Serrano — Personal Portfolio Website
 
-  > ⚠️ Note: This project is MIT-licensed for learning purposes.  
+  > ⚠️ Note: This project is GNU GPLv3-licensed for learning purposes.  
   > Please **do not directly copy or republish my website design**.  
   > You’re welcome to explore the structure and learn from it.
 
