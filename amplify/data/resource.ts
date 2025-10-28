@@ -26,11 +26,31 @@ const schema = a.schema({
     })
     .authorization((allow) => [allow.publicApiKey()]),
 
-    ContactMessage: a
+  ContactMessage: a
     .model({
       name: a.string(),
       email: a.string(),
       message: a.string(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+
+  ProjectDetail: a
+    .model({
+      slug: a.string().required(),
+      title: a.string().required(),
+      overview: a.string(),
+      objectives: a.string().array(),
+      key_features: a.string().array(),
+      tech_stack: a.string().array(),
+      outcomes: a.string(),
+      design: a.string(),
+      improvements: a.string().array(),
+      conclusion: a.string(),
+      images: a.customType({
+        banner: a.string(),
+        diagram: a.string(),
+      }),
+      repository: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
 });

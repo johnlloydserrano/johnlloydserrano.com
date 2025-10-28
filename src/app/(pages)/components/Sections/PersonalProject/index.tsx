@@ -33,7 +33,7 @@ export default function PersonalProjectSection({
                   data={personalProjectData}
                   withDescription
                   withLink
-                  // linkRoute={(slug) => route("project.detail", { slug })}
+                  linkRoute={slug => `/projects/${slug}`}
                   gridClasses="grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                 />
               )
