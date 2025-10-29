@@ -3,6 +3,7 @@ import SectionHeader from '../components/SectionHeader';
 import { PersonalProjectSkeleton } from '../../Skeletons';
 import { CardListGrids } from '../components/CardListGrid';
 import { PersonalProject } from '@/models/personalProjects/types';
+import { useTranslation } from 'react-i18next';
 
 interface PersonalProjectSectionProps {
   personalProjectData: PersonalProject[] | null;
@@ -13,6 +14,8 @@ export default function PersonalProjectSection({
   personalProjectData,
   isLoading,
 }: PersonalProjectSectionProps) {
+  const { t } = useTranslation();
+
   return (
     <div id="personal-projects" className="personal-project-wrapper">
       <div className="xl:px-24 mx-auto pt-6 pb-12">
@@ -23,7 +26,8 @@ export default function PersonalProjectSection({
           transition={{ duration: 1, ease: 'easeOut' }}
           viewport={{ once: true, amount: 0.1 }}
         >
-          <SectionHeader title="My Personal Projects" />
+          <SectionHeader title={t('sectionTitles.myPersonalProjects')} />
+
           <div className="h-full w-full flex justify-center">
             {isLoading ? (
               <PersonalProjectSkeleton />

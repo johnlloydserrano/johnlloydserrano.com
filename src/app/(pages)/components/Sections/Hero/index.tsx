@@ -3,6 +3,7 @@ import Particles from '@tsparticles/react';
 import { useParticles } from '@/app/hooks/useParticles';
 import { Hero } from '@/models/heroes/types';
 import { Button } from '@/app/components/atoms/Button';
+import { useTranslation } from 'react-i18next';
 
 interface HeroSectionProps {
   heroData: Hero | null;
@@ -10,6 +11,7 @@ interface HeroSectionProps {
 
 export default function HeroSection({ heroData }: HeroSectionProps) {
   const { init, options } = useParticles();
+  const { t } = useTranslation();
 
   return (
     <div
@@ -45,7 +47,7 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
                 <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                 <span className="relative z-10 flex items-center gap-2">
                   <Handshake />
-                  Get In Touch
+                  {t('getInTouch')}
                 </span>
               </Button>
             </div>

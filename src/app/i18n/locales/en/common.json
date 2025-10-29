@@ -1,0 +1,58 @@
+{
+  "brand": "John Lloyd Serrano",
+  "header": {
+    "experience": "Experience",
+    "skills": "Skills",
+    "services": "Services",
+    "personalProjects": "Personal Projects",
+    "achievements": "Achievements",
+    "contact": "Contact"
+  },
+  "getInTouch": "Get In Touch",
+  "resume": "Resume",
+  "skillsheet": "SkillSheet",
+  "linkedIn": "LinkedIn",
+  "getStarted": "Get Started",
+  "privacyPolicy": "Privacy Policy",
+  "viewGithubSource": "View Source on GitHub",
+  "sectionTitles": {
+    "myEducation": "My Education",
+    "myWorkExperience": "My Work Eperience",
+    "mySkills": "My Skills",
+    "myServices": "My Services",
+    "myPersonalProjects": "My Personal Projects",
+    "myAchievements": "My Achievements",
+    "contactMe": "Contact Me"
+  },
+  "contactForm": {
+    "description": "I look forward to hearing from you. Fill out the form below, and I’ll get back to you as soon as possible.",
+    "nameLabel": "Name",
+    "namePlaceHolder": "Your Name",
+    "emailLabel": "Email",
+    "emailPlaceHolder": "youremail@example.com",
+    "messageLabel": "Message",
+    "messagePlaceHolder": "How can i help you?",
+    "messageDescription": "Please provide as many details as possible.",
+    "sending": "Sending...",
+    "sendMessage": "Send Message",
+    "success": "Message sent successfully!",
+    "failed": "Something went wrong. Please try again later.",
+    "validation": {
+      "nameMin": "Name must be at least 2 characters.",
+      "email": "Please enter a valid email address.",
+      "messageMin": "Message must be at least 10 characters."
+    },
+    "info": {
+      "title": "Contact Information",
+      "socialMediaTitle": "Social Media",
+      "address": "Greenland, Cogon Pardo",
+      "city": "Cebu City, 6000 Cebu",
+      "email": "contact@johnlloydserrano.com",
+      "phone": "+63 976 428 1616"
+    }
+  },
+  "footer": {
+    "title": "Ready to bring your ideas to life?",
+    "description": "Let’s build something amazing together."
+  }
+}

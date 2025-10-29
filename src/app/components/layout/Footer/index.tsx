@@ -4,9 +4,11 @@ import { useParticles } from '@/app/hooks/useParticles';
 import { Button } from '../../atoms/Button';
 import Link from 'next/link';
 import { heroData } from '@/app/data/data';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
   const { init, options } = useParticles();
+  const { t } = useTranslation();
 
   return (
     <div className="relative w-full select-none border-t bg-linear-to-b from-white to-background/80 backdrop-blur-md">
@@ -25,10 +27,10 @@ export default function Footer() {
             <Rocket size={48} className="text-black" />
             <div className="space-y-1 text-center sm:text-left">
               <h3 className="text-base quicksand-medium">
-                Ready to bring your ideas to life?
+                {t('footer.title')}
               </h3>
               <p className="text-sm text-title-sub quicksand-regular">
-                Let’s build something amazing together.
+                {t('footer.description')}
               </p>
             </div>
           </div>
@@ -39,7 +41,7 @@ export default function Footer() {
           >
             <span className="absolute left-0 top-0 h-full w-full bg-linear-to-tr from-primary to-accent"></span>
             <span className="relative z-10 flex items-center gap-2">
-              Get Started
+              {t('getStarted')}
               <ArrowRight />
             </span>
           </Button>
@@ -56,7 +58,7 @@ export default function Footer() {
                 aria-label={heroData?.name}
                 role="img"
               />
-              <span className="caveat-bold text-lg">John Lloyd Serrano</span>
+              <span className="caveat-bold text-lg">{t('brand')}</span>
             </Link>
           </div>
 
@@ -66,7 +68,7 @@ export default function Footer() {
                 href="privacy-policy"
                 className="z-10 flex items-center gap-2"
               >
-                Privacy Policy
+                {t('privacyPolicy')}
               </Link>
             </p>
             <p className="text-sm text-title-sub quicksand-regular">
@@ -75,7 +77,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="hover:underline hover:decoration-primary"
               >
-                View Source on GitHub
+                {t('viewGithubSource')}
               </a>
             </p>
           </div>

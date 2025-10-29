@@ -5,6 +5,7 @@ import { SkillSkeleton } from '../../Skeletons';
 import { CardListGrids } from '../components/CardListGrid';
 import { Skill } from '@/models/skills/types';
 import { Button } from '@/app/components/atoms/Button';
+import { useTranslation } from 'react-i18next';
 
 interface SkillSectionProps {
   skillData: Skill[] | null;
@@ -20,6 +21,7 @@ export default function SkillSection({
     link.href = url;
     link.click();
   };
+  const { t } = useTranslation();
 
   return (
     <div id="skills" className="skill-wrapper">
@@ -31,7 +33,7 @@ export default function SkillSection({
           transition={{ duration: 1, ease: 'easeOut' }}
           viewport={{ amount: 0.1, once: true }}
         >
-          <SectionHeader title="My Skills" />
+          <SectionHeader title={t('sectionTitles.mySkills')} />
           <div className="h-full w-full flex flex-col justify-center items-center space-y-6">
             {isLoading ? (
               <SkillSkeleton />
@@ -51,7 +53,7 @@ export default function SkillSection({
                 <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                 <span className="relative z-10 flex items-center gap-2">
                   <Download />
-                  Resume
+                  {t('resume')}
                 </span>
               </Button>
               {/* onClick={() => handleDownload(route('download.skillsheet'))} */}
@@ -62,7 +64,7 @@ export default function SkillSection({
                 <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                 <span className="relative z-10 flex items-center gap-2">
                   <Download />
-                  SkillSheet
+                  {t('skillsheet')}
                 </span>
               </Button>
             </div>

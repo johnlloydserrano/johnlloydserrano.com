@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { cn } from '@/libs/utils';
 import { useHeader } from '@/app/hooks/useHeader';
 import { heroData } from '@/app/data/data';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   sectionData: Section[];
@@ -15,6 +16,7 @@ interface Props {
 export default function Header({ sectionData }: Props) {
   const { state, toggleMenu, handleScroll } = useHeader();
   const { hidden, menuOpen, isFirstRender } = state;
+  const { t } = useTranslation();
 
   return (
     <>
@@ -44,7 +46,7 @@ export default function Header({ sectionData }: Props) {
               aria-label={heroData?.name}
               role="img"
             />
-            <span className="caveat-bold text-lg">John Lloyd Serrano</span>
+            <span className="caveat-bold text-lg">{t('brand')}</span>
           </Link>
 
           <nav className="quicksand-semibold hidden lg:flex lg:items-center md:gap-6">
@@ -59,7 +61,7 @@ export default function Header({ sectionData }: Props) {
                   handleScroll(item.id);
                 }}
               >
-                {item.name}
+                {t(item.name)}
                 <motion.span
                   className="absolute left-0 -bottom-1 h-0.5 w-full bg-gray-900 origin-left scale-x-0"
                   initial={{ scaleX: 0 }}

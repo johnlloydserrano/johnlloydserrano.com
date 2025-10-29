@@ -1,4 +1,5 @@
 'use client';
+import '@/app/i18n';
 import { AmplifyConfig } from '@/libs/amplifyConfig';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useState } from 'react';
