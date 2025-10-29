@@ -9,12 +9,12 @@ import { WorkExperience } from '@/models/workExperiences/types';
 // STATIC DATA
 
 export const sectionData: Section[] = [
-  { name: 'Experience', id: 'experience' },
-  { name: 'Skills', id: 'skills' },
-  { name: 'Services', id: 'services' },
-  { name: 'Personal Projects', id: 'personal-projects' },
-  { name: 'Achievements', id: 'achievements' },
-  { name: 'Contact', id: 'contact' },
+  { name: 'header.experience', id: 'experience' },
+  { name: 'header.skills', id: 'skills' },
+  { name: 'header.services', id: 'services' },
+  { name: 'header.personalProjects', id: 'personal-projects' },
+  { name: 'header.achievements', id: 'achievements' },
+  { name: 'header.contact', id: 'contact' },
 ];
 
 export const heroData: Hero = {

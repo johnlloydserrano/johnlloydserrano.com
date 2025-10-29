@@ -1,13 +1,16 @@
 import { SocialLink } from '@/models/socialLinks/types';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   socialMediaData: SocialLink[] | null;
 }
 
 export default function SocialMediaList({ socialMediaData }: Props) {
+  const { t } = useTranslation();
+
   return (
     <div className="h-[50%] w-full p-6 rounded-md space-y-6">
-      <h4 className="font-medium">Social Media</h4>
+      <h4 className="font-medium">{t('contactForm.info.socialMediaTitle')}</h4>
       <div className="flex space-x-4">
         {socialMediaData?.map((social, index) => (
           <a

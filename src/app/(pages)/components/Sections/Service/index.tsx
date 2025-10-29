@@ -2,12 +2,15 @@ import { motion } from 'framer-motion';
 import SectionHeader from '../components/SectionHeader';
 import CardList from '../components/CardList';
 import { Service } from '@/models/services/types';
+import { useTranslation } from 'react-i18next';
 
 interface ServiceSectionProps {
   serviceData: Service[] | null;
 }
 
 export default function ServiceSection({ serviceData }: ServiceSectionProps) {
+  const { t } = useTranslation();
+
   return (
     <div id="services" className="service-wrapper bg-white">
       <div className="xl:px-24 mx-auto py-6">
@@ -18,7 +21,7 @@ export default function ServiceSection({ serviceData }: ServiceSectionProps) {
           transition={{ duration: 1, ease: 'easeOut' }}
           viewport={{ amount: 0.1, once: true }}
         >
-          <SectionHeader title="My Services" />
+          <SectionHeader title={t('sectionTitles.myServices')} />
 
           <div className="w-full py-6">
             <CardList listData={serviceData} />

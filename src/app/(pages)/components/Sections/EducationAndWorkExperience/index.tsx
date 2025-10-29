@@ -5,6 +5,7 @@ import CardList from '../components/CardList';
 import { Education } from '@/models/educations/types';
 import { WorkExperience } from '@/models/workExperiences/types';
 import { Button } from '@/app/components/atoms/Button';
+import { useTranslation } from 'react-i18next';
 
 interface EducationAndWorkExperienceSectionProps {
   educationData: Education[] | null;
@@ -15,6 +16,8 @@ export default function EducationAndWorkExperienceSection({
   educationData,
   workExperienceData,
 }: EducationAndWorkExperienceSectionProps) {
+  const { t } = useTranslation();
+
   return (
     <section>
       <div id="experience" className="education-and-work-wrapper bg-white">
@@ -28,7 +31,7 @@ export default function EducationAndWorkExperienceSection({
           >
             <div className="grid grid-cols-1 lg:grid-cols-2 p-6 space-y-12 lg:space-y-0">
               <div className="w-full space-y-6">
-                <SectionHeader title="My Education" />
+                <SectionHeader title={t('sectionTitles.myEducation')} />
                 <div className="w-full grid grid-cols-1 gap-4 px-4">
                   {educationData?.map(({ id, logo, school, degree, year }) => (
                     <CardList
@@ -43,7 +46,7 @@ export default function EducationAndWorkExperienceSection({
               </div>
 
               <div className="w-full space-y-6">
-                <SectionHeader title="My Work Experience" />
+                <SectionHeader title={t('sectionTitles.myWorkExperience')} />
                 <div className="w-full grid grid-cols-1 gap-4 px-4">
                   {workExperienceData?.map(
                     ({ id, logo, company, role, period }) => (
@@ -74,7 +77,7 @@ export default function EducationAndWorkExperienceSection({
                   <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
                   <span className="relative z-10 flex items-center gap-2">
                     <SquareArrowOutUpRight />
-                    LinkedIn
+                    {t('linkedIn')}
                   </span>
                 </Button>
               </a>

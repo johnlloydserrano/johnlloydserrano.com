@@ -4,8 +4,11 @@ import ContactForm from '../components/ContactForm';
 import ContactInfo from '../components/ContactInfo';
 import SocialMediaList from '../components/SocialMediaList';
 import { socialLinksData } from '@/app/data/data';
+import { useTranslation } from 'react-i18next';
 
 export default function ContactSection() {
+  const { t } = useTranslation();
+
   return (
     <section id="contact" className="w-full pb-6">
       <div className="xl:px-24 mx-auto py-6">
@@ -18,8 +21,8 @@ export default function ContactSection() {
         >
           <div className="p-6">
             <SectionHeader
-              title="Contact Me"
-              description="I look forward to hearing from you. Fill out the form below, and I’ll get back to you as soon as possible."
+              title={t('sectionTitles.contactMe')}
+              description={t('contactForm.description')}
             />
             <div className="px-4 py-6 flex flex-col gap-8 md:flex-row">
               <div className="w-full md:w-[80%] space-y-6 relative">

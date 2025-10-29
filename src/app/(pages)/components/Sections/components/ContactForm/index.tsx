@@ -17,20 +17,22 @@ import { Button } from '@/app/components/atoms/Button';
 import { toast } from 'sonner';
 import useCreateContactMessage from '@/app/hooks/useCreateContactMessage';
 import useSendEmail from '@/app/hooks/useSendEmail';
-
-const formSchema = z.object({
-  name: z.string().min(2, { message: 'Name must be at least 2 characters.' }),
-  email: z.string().email({ message: 'Please enter a valid email address.' }),
-  message: z
-    .string()
-    .min(10, { message: 'Message must be at least 10 characters.' }),
-});
+import { useTranslation } from 'react-i18next';
 
 export default function ContactForm() {
   const { mutateAsync: createMessage, isPending: isPendingContactMessage } =
     useCreateContactMessage();
   const { mutateAsync: sendEmail, isPending: isPendingSendMail } =
     useSendEmail();
+  const { t } = useTranslation();
+
+  const formSchema = z.object({
+    name: z.string().min(2, { message: t('contactForm.validation.nameMin') }),
+    email: z.string().email({ message: t('contactForm.validation.email') }),
+    message: z
+      .string()
+      .min(10, { message: t('contactForm.validation.messageMin') }),
+  });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -46,11 +48,11 @@ export default function ContactForm() {
       await createMessage(values);
       await sendEmail(values);
 
-      toast.success('Message sent successfully!');
+      toast.success(t('contactForm.success'));
       form.reset();
     } catch (error) {
       console.error(error);
-      toast.error('Something went wrong. Please try again later.');
+      toast.error(t('contactForm.failed'));
     }
   }
 
@@ -65,10 +67,12 @@ export default function ContactForm() {
           name="name"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="quicksand-semibold">Name</FormLabel>
+              <FormLabel className="quicksand-semibold">
+                {t('contactForm.nameLabel')}
+              </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Your Name"
+                  placeholder={t('contactForm.namePlaceHolder')}
                   className="quicksand-regular focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none"
                   {...field}
                 />
@@ -82,10 +86,12 @@ export default function ContactForm() {
           name="email"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="quicksand-semibold">Email</FormLabel>
+              <FormLabel className="quicksand-semibold">
+                {t('contactForm.emailLabel')}
+              </FormLabel>
               <FormControl>
                 <Input
-                  placeholder="youremail@example.com"
+                  placeholder={t('contactForm.emailPlaceHolder')}
                   className="quicksand-regular focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none"
                   type="email"
                   {...field}
@@ -100,16 +106,18 @@ export default function ContactForm() {
           name="message"
           render={({ field }) => (
             <FormItem>
-              <FormLabel className="quicksand-semibold">Message</FormLabel>
+              <FormLabel className="quicksand-semibold">
+                {t('contactForm.messageLabel')}
+              </FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="How can I help you"
+                  placeholder={t('contactForm.messagePlaceHolder')}
                   className="quicksand-regular focus:ring-0 focus:border-primary border-t-0 border-x-0 rounded-none py-6 shadow-none min-h-[120px]"
                   {...field}
                 />
               </FormControl>
               <FormDescription className="quicksand-thin text-xs">
-                Please provide as many details as possible.
+                {t('contactForm.messageDescription')}
               </FormDescription>
               <FormMessage />
             </FormItem>
@@ -125,8 +133,8 @@ export default function ContactForm() {
             <span className="relative z-10 flex items-center gap-2">
               <Send />
               {isPendingContactMessage || isPendingSendMail
-                ? 'Sending...'
-                : 'Send Message'}
+                ? t('contactForm.sending')
+                : t('contactForm.sendMessage')}
             </span>
           </Button>
         </div>
