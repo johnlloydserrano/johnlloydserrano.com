@@ -1,8 +1,8 @@
-import { ArrowRight, Rocket } from 'lucide-react';
+import { Rocket } from 'lucide-react';
 import Particles from '@tsparticles/react';
 import { useParticles } from '@/app/hooks/useParticles';
-import { Button } from '../../atoms/Button';
 import Link from 'next/link';
+import Image from 'next/image';
 import { heroData } from '@/app/data/data';
 import { useTranslation } from 'react-i18next';
 
@@ -35,16 +35,19 @@ export default function Footer() {
             </div>
           </div>
 
-          <Button
-            className="w-auto text-base relative overflow-hidden group px-6! py-3"
-            variant="primary"
+          <Link
+            href="https://www.producthunt.com/products/john-lloyd-serrano?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-john-lloyd-serrano-2"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <span className="absolute left-0 top-0 h-full w-full bg-linear-to-tr from-primary to-accent"></span>
-            <span className="relative z-10 flex items-center gap-2">
-              {t('getStarted')}
-              <ArrowRight />
-            </span>
-          </Button>
+            <Image
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1032511&theme=light&t=1761873028499"
+              alt="John Lloyd Serrano - A simple portfolio built to share my work and journey | Product Hunt"
+              width={250}
+              height={54}
+              style={{ width: '250px', height: '54px' }}
+            />
+          </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center text-center md:text-left">

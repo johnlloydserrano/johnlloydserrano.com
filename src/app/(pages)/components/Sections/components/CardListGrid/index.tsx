@@ -26,7 +26,9 @@ export const CardListGrids = ({
           <Card
             key={index}
             className={`rounded-md border shadow-none ${
-              withDescription ? 'bg-white' : 'bg-transparent border-none'
+              withDescription
+                ? 'bg-white hover:border-primary'
+                : 'bg-transparent border-none'
             }`}
           >
             <CardContent className={`p-0 ${cardContentClass}`}>

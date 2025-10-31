@@ -13,6 +13,15 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
   const { init, options } = useParticles();
   const { t } = useTranslation();
 
+  const handleScroll = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const yOffset = -35;
+      const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+  };
+
   return (
     <div
       id="hero"
@@ -41,10 +50,11 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
             />
             <div className="mt-6 w-full flex flex-col sm:flex-row justify-center items-center gap-4">
               <Button
-                className="rounded-full w-auto px-6 py-3 relative overflow-hidden group"
+                onClick={() => handleScroll('contact')}
+                className="rounded-full w-auto px-6 py-3 relative overflow-hidden group cursor-pointer"
                 variant="primary"
               >
-                <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full"></span>
+                <span className="absolute left-0 top-0 h-full w-0 bg-linear-to-tr from-primary to-secondary transition-all duration-300 ease-out group-hover:w-full" />
                 <span className="relative z-10 flex items-center gap-2">
                   <Handshake />
                   {t('getInTouch')}

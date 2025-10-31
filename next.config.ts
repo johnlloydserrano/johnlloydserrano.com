@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 'cloudfront.johnlloydserrano.com',
       },
+      {
+        protocol: "https",
+        hostname: "api.producthunt.com",
+      },
     ]
   }
 };
