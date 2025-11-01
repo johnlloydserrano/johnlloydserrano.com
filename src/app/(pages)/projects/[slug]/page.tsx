@@ -106,6 +106,7 @@ export default function Projects() {
     repository,
     conclusion,
     images,
+    product_hunt,
   } = project;
 
   return (
@@ -194,7 +195,7 @@ export default function Projects() {
         {images?.diagram && (
           <section className="space-y-2">
             <h2 className="text-2xl font-semibold">Infrastructure Diagram</h2>
-            <div className="w-full rounded-lg overflow-hidden relative h-[650px]">
+            <div className="w-full rounded-lg overflow-hidden relative h-[650px] shadow-lg border">
               <Image
                 src={images.diagram}
                 alt={`${title} Diagram`}
@@ -241,7 +242,7 @@ export default function Projects() {
                 href={repository}
                 rel="noopener noreferrer"
                 target="_blank"
-                className="hover:underline hover:decoration-primary"
+                className="underline underline-offset-1 hover:underline hover:decoration-primary"
               >
                 {repository}
               </a>
@@ -255,6 +256,62 @@ export default function Projects() {
             <p className="text-gray-700 whitespace-pre-line">{conclusion}</p>
           </section>
         )}
+
+        {product_hunt && (
+          <section className="space-y-2">
+            <h2 className="text-2xl font-semibold">Product Hunt Launch</h2>
+            <p className="text-gray-700 whitespace-pre-line">
+              {product_hunt.description}
+            </p>
+
+            <div className="flex justify-center items-center gap-x-12 py-4">
+              <div>
+                <p className="text-xs font-acorn color-effect">Position</p>
+                <p className="text-3xl font-acorn font-bold color-effect">
+                  {product_hunt.position} out of {product_hunt.total_launches}
+                </p>
+                <p className="text-xs text-gray-600 font-semibold font-acorn color-effect">
+                  Launched on {product_hunt.launch_date}
+                </p>
+              </div>
+              {product_hunt.link && product_hunt.embed_image_url && (
+                <Link
+                  href={product_hunt.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Image
+                    src={product_hunt.embed_image_url}
+                    alt={`${title} Product Hunt`}
+                    width={250}
+                    height={54}
+                    style={{ width: '250px', height: '54px' }}
+                  />
+                </Link>
+              )}
+            </div>
+
+            <div className="space-y-4">
+              {product_hunt.screenshots?.map((url, i) => (
+                <div
+                  key={i}
+                  className="w-full rounded-lg overflow-hidden relative h-[360px] shadow-lg border"
+                >
+                  <Image
+                    src={url}
+                    alt={`${title} Screenshot`}
+                    fill
+                    className="object-contain select-none pointer-events-none"
+                    priority
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+      </div>
+      <div className="text-center py-6 quicksand-regular text-xs">
+        Made with love ❤️
       </div>
     </>
   );
