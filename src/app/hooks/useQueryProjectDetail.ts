@@ -26,6 +26,17 @@ const transformProjectDetailResponse = (
     diagram: project.images?.diagram ?? '',
   },
   repository: project.repository ?? '',
+  product_hunt: project.product_hunt
+    ? {
+        description: project.product_hunt.description ?? '',
+        position: project.product_hunt.position ?? '',
+        total_launches: project.product_hunt.total_launches ?? '',
+        launch_date: project.product_hunt.launch_date ?? '',
+        embed_image_url: project.product_hunt.embed_image_url ?? '',
+        screenshots: project.product_hunt.screenshots ?? [],
+        link: project.product_hunt.link ?? '',
+      }
+    : undefined,
 });
 
 const fetchProjectDetail = async (slug: string): Promise<ProjectDetail> => {
@@ -46,6 +57,14 @@ const fetchProjectDetail = async (slug: string): Promise<ProjectDetail> => {
     objectives: project.objectives?.filter((v): v is string => !!v) ?? [],
     key_features: project.key_features?.filter((v): v is string => !!v) ?? [],
     tech_stack: project.tech_stack?.filter((v): v is string => !!v) ?? [],
+    product_hunt: project.product_hunt
+      ? {
+          ...project.product_hunt,
+          screenshots:
+            project.product_hunt.screenshots?.filter((v): v is string => !!v) ??
+            [],
+        }
+      : undefined,
   } as ProjectDetailSchema;
 
   return transformProjectDetailResponse(nullSafeProjects);

@@ -15,6 +15,15 @@ export interface ProjectDetail {
     diagram?: string;
   };
   repository?: string;
+  product_hunt?: {
+    description?: string;
+    position?: string;
+    total_launches?: string;
+    launch_date?: string;
+    embed_image_url?: string;
+    screenshots?: string[];
+    link?: string;
+  };
 }
 
 export type ProjectDetailSchema = {
@@ -33,6 +42,15 @@ export type ProjectDetailSchema = {
     diagram: string | null;
   } | null;
   repository: string | null;
+  product_hunt?: {
+    description: string | null;
+    position: string | null;
+    total_launches: string | null;
+    launch_date: string | null;
+    embed_image_url: string | null;
+    screenshots: string[] | null;
+    link: string | null;
+  } | null;
   readonly id: string;
   readonly createdAt: string;
   readonly updatedAt: string;

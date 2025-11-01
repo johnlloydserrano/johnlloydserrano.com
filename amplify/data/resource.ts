@@ -51,6 +51,15 @@ const schema = a.schema({
         diagram: a.string(),
       }),
       repository: a.string(),
+      product_hunt: a.customType({
+        description: a.string(),
+        position: a.string(),
+        total_launches: a.string(),
+        launch_date: a.string(),
+        embed_image_url: a.string(),
+        screenshots: a.string().array(),
+        link: a.string(),
+      }),
     })
     .authorization((allow) => [allow.publicApiKey()]),
 });
