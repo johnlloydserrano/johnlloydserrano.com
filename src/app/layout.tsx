@@ -3,15 +3,20 @@ import Script from 'next/script';
 import './globals.css';
 import { QueryContext } from './contexts/QueryContext';
 
+const seoDescription =
+  'John Lloyd Serrano is a web developer focused on creating reliable, practical, and efficient digital solutions. He brings hands-on experience, strong collaboration skills, and a commitment to delivering high-quality results.';
+
 export const metadata: Metadata = {
-  title: 'John Lloyd Serrano',
-  description:
-    'John Lloyd Serrano is a dedicated web developer with a foundation built on professional growth and hands-on experience. He contributes to collaborative projects, helping deliver practical and reliable solutions that support both team goals and client needs.',
+  title: 'John Lloyd Serrano – Web Developer',
+  description: seoDescription,
   authors: [{ name: 'John Lloyd Serrano' }],
+  metadataBase: new URL('https://johnlloydserrano.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
-    title: 'John Lloyd Serrano',
-    description:
-      'John Lloyd Serrano is a dedicated web developer with a foundation built on professional growth and hands-on experience. He contributes to collaborative projects, helping deliver practical and reliable solutions that support both team goals and client needs.',
+    title: 'John Lloyd Serrano – Web Developer',
+    description: seoDescription,
     url: 'https://johnlloydserrano.com',
     type: 'website',
     images: [
@@ -19,15 +24,14 @@ export const metadata: Metadata = {
         url: 'https://cloudfront.johnlloydserrano.com/public/images/static/serrano-meta.png',
         width: 1200,
         height: 630,
-        alt: 'John Lloyd Serrano',
+        alt: 'John Lloyd Serrano – Web Developer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'John Lloyd Serrano',
-    description:
-      'John Lloyd Serrano is a dedicated web developer with a foundation built on professional growth and hands-on experience.',
+    title: 'John Lloyd Serrano – Web Developer',
+    description: seoDescription,
     images: [
       'https://cloudfront.johnlloydserrano.com/public/images/static/serrano-meta.png',
     ],
@@ -35,15 +39,12 @@ export const metadata: Metadata = {
   icons: {
     icon: 'https://cloudfront.johnlloydserrano.com/public/images/static/serrano.png',
   },
-  metadataBase: new URL('https://johnlloydserrano.com'),
-  alternates: {
-    canonical: '/',
-  },
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
+  
   const personData = {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -52,8 +53,7 @@ export default function RootLayout({
     image:
       'https://cloudfront.johnlloydserrano.com/public/images/static/serrano-meta.png',
     jobTitle: 'Web Developer',
-    description:
-      'John Lloyd Serrano is a dedicated web developer with a foundation built on professional growth and hands-on experience. He contributes to collaborative projects, helping deliver practical and reliable solutions that support both team goals and client needs.',
+    description: seoDescription,
     sameAs: [
       'https://www.linkedin.com/in/johnlloydserrano',
       'https://github.com/jl-serrano',
