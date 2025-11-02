@@ -38,9 +38,9 @@ export default function HeroSection({ heroData }: HeroSectionProps) {
       )}
       <section className="relative px-8 xl:px-24 mx-auto w-full flex flex-col items-center justify-center py-12 text-center">
         <div className="w-full py-3">
-          <p className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-xl-responsive tracking-tight color-effect leading-tight w-full">
+          <h1 className="font-acorn text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-xl-responsive tracking-tight color-effect leading-tight w-full">
             {heroData?.name}
-          </p>
+          </h1>
         </div>
         <div className="hero-section-box w-full flex flex-col lg:flex-row items-center justify-center">
           <div className="w-full lg:w-1/2 flex flex-col items-center text-center lg:text-left">
