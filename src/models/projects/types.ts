@@ -4,8 +4,8 @@ export interface ProjectDetail {
   title: string;
   overview?: string;
   objectives?: string[];
-  key_features?: string[];
-  tech_stack?: string[];
+  keyFeatures?: string[];
+  techStack?: string[];
   outcomes?: string;
   design?: string;
   improvements?: string[];
@@ -15,12 +15,12 @@ export interface ProjectDetail {
     diagram?: string;
   };
   repository?: string;
-  product_hunt?: {
+  productHunt?: {
     description?: string;
     position?: string;
-    total_launches?: string;
-    launch_date?: string;
-    embed_image_url?: string;
+    totalLaunches?: string;
+    launchDate?: string;
+    embedImageUrl?: string;
     screenshots?: string[];
     link?: string;
   };
@@ -31,8 +31,8 @@ export type ProjectDetailSchema = {
   title: string | null;
   overview: string | null;
   objectives: string[] | null;
-  key_features: string[] | null;
-  tech_stack: string[] | null;
+  keyFeatures: string[] | null;
+  techStack: string[] | null;
   outcomes: string | null;
   design: string | null;
   improvements: string[] | null;
@@ -42,12 +42,12 @@ export type ProjectDetailSchema = {
     diagram: string | null;
   } | null;
   repository: string | null;
-  product_hunt?: {
+  productHunt?: {
     description: string | null;
     position: string | null;
-    total_launches: string | null;
-    launch_date: string | null;
-    embed_image_url: string | null;
+    totalLaunches: string | null;
+    launchDate: string | null;
+    embedImageUrl: string | null;
     screenshots: string[] | null;
     link: string | null;
   } | null;

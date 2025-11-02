@@ -14,6 +14,13 @@ const schema = a.schema({
       slug: a.string(),
       imageUrl: a.string(),
       description: a.string(),
+      productHunt: a.customType({
+        title: a.string(),
+        position: a.string(),
+        totalLaunches: a.string(),
+        launchDate: a.string(),
+        logoUrl: a.string(),
+      }),
     })
     .authorization((allow) => [allow.publicApiKey()]),
 
@@ -40,8 +47,8 @@ const schema = a.schema({
       title: a.string().required(),
       overview: a.string(),
       objectives: a.string().array(),
-      key_features: a.string().array(),
-      tech_stack: a.string().array(),
+      keyFeatures: a.string().array(),
+      techStack: a.string().array(),
       outcomes: a.string(),
       design: a.string(),
       improvements: a.string().array(),
@@ -51,12 +58,12 @@ const schema = a.schema({
         diagram: a.string(),
       }),
       repository: a.string(),
-      product_hunt: a.customType({
+      productHunt: a.customType({
         description: a.string(),
         position: a.string(),
-        total_launches: a.string(),
-        launch_date: a.string(),
-        embed_image_url: a.string(),
+        totalLaunches: a.string(),
+        launchDate: a.string(),
+        embedImageUrl: a.string(),
         screenshots: a.string().array(),
         link: a.string(),
       }),
