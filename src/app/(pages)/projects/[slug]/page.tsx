@@ -8,9 +8,11 @@ import useProjects from './useProjects';
 import Loader from '@/app/components/layout/Loader';
 import Head from 'next/head';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
   const { project, isLoading, error } = useProjects();
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (project) {
@@ -72,7 +74,7 @@ export default function Projects() {
             role="img"
           />
         )}
-        Something went wrong. Please try again later.
+        {t('errors.queryError')}
       </div>
     );
   }
@@ -89,7 +91,7 @@ export default function Projects() {
             role="img"
           />
         )}
-        Sorry, we couldn&apos;t find that project.
+        {t('errors.projectNotFound')}
       </div>
     );
   }
@@ -98,15 +100,15 @@ export default function Projects() {
     title,
     overview,
     objectives = [],
-    key_features = [],
-    tech_stack = [],
+    keyFeatures = [],
+    techStack = [],
     design,
     improvements = [],
     outcomes,
     repository,
     conclusion,
     images,
-    product_hunt,
+    productHunt,
   } = project;
 
   return (
@@ -147,7 +149,7 @@ export default function Projects() {
           <h2 className="hover:underline hover:decoration-primary text-xs font-normal gap-x-1 flex items-center">
             <ArrowLeftIcon className="w-4 h-4" />
             <Link href="/" className="z-10 flex items-center gap-2">
-              Back to Home
+              {t('backToHome')}
             </Link>
           </h2>
 
@@ -161,7 +163,9 @@ export default function Projects() {
 
         {objectives.length > 0 && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Objectives</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.objectives')}
+            </h2>
             <ul className="list-disc ml-6 space-y-1">
               {objectives.map((obj, i) => (
                 <li key={i}>{obj}</li>
@@ -170,22 +174,26 @@ export default function Projects() {
           </section>
         )}
 
-        {key_features.length > 0 && (
+        {keyFeatures.length > 0 && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Key Features</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.keyFeature')}
+            </h2>
             <ul className="list-disc ml-6 space-y-1">
-              {key_features.map((feat, i) => (
+              {keyFeatures.map((feat, i) => (
                 <li key={i}>{feat}</li>
               ))}
             </ul>
           </section>
         )}
 
-        {tech_stack.length > 0 && (
+        {techStack.length > 0 && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Tech Stack</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.techStack')}
+            </h2>
             <ul className="list-disc ml-6 space-y-1">
-              {tech_stack.map((feat, i) => (
+              {techStack.map((feat, i) => (
                 <li key={i}>{feat}</li>
               ))}
             </ul>
@@ -194,7 +202,9 @@ export default function Projects() {
 
         {images?.diagram && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Infrastructure Diagram</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.infrastructureDiagram')}
+            </h2>
             <div className="w-full rounded-lg overflow-hidden relative h-[650px] shadow-lg border">
               <Image
                 src={images.diagram}
@@ -209,14 +219,18 @@ export default function Projects() {
 
         {design && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Design & User Experience</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.designAndUserExperience')}
+            </h2>
             <p className="text-gray-700 whitespace-pre-line">{design}</p>
           </section>
         )}
 
         {improvements.length > 0 && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Future Improvements</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.futureImprovements')}
+            </h2>
             <ul className="list-disc ml-6 space-y-1">
               {improvements.map((feat, i) => (
                 <li key={i}>{feat}</li>
@@ -227,7 +241,9 @@ export default function Projects() {
 
         {outcomes && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Outcomes & Learnings</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.outcomesAndLearnings')}
+            </h2>
             <p className="text-gray-700 whitespace-pre-line">
               {outcomes.replace(/\\n/g, '\n')}
             </p>
@@ -236,7 +252,9 @@ export default function Projects() {
 
         {repository && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Source Code</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.sourceCode')}
+            </h2>
             <p className="text-sm text-title-sub quicksand-regular">
               <a
                 href={repository}
@@ -252,36 +270,43 @@ export default function Projects() {
 
         {conclusion && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Conclusion</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.conclusion')}
+            </h2>
             <p className="text-gray-700 whitespace-pre-line">{conclusion}</p>
           </section>
         )}
 
-        {product_hunt && (
+        {productHunt && (
           <section className="space-y-2">
-            <h2 className="text-2xl font-semibold">Product Hunt Launch</h2>
+            <h2 className="text-2xl font-semibold">
+              {t('projectDetails.productHuntLaunch')}
+            </h2>
             <p className="text-gray-700 whitespace-pre-line">
-              {product_hunt.description}
+              {productHunt.description}
             </p>
 
             <div className="flex justify-center items-center gap-x-12 py-4">
               <div>
-                <p className="text-xs font-acorn color-effect">Position</p>
+                <p className="text-xs font-acorn color-effect">
+                  {t('productHunt.position')}
+                </p>
                 <p className="text-3xl font-acorn font-bold color-effect">
-                  {product_hunt.position} out of {product_hunt.total_launches}
+                  {productHunt.position} {t('productHunt.outOf')}{' '}
+                  {productHunt.totalLaunches}
                 </p>
                 <p className="text-xs text-gray-600 font-semibold font-acorn color-effect">
-                  Launched on {product_hunt.launch_date}
+                  {t('productHunt.launchedOn')} {productHunt.launchDate}
                 </p>
               </div>
-              {product_hunt.link && product_hunt.embed_image_url && (
+              {productHunt.link && productHunt.embedImageUrl && (
                 <Link
-                  href={product_hunt.link}
+                  href={productHunt.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Image
-                    src={product_hunt.embed_image_url}
+                    src={productHunt.embedImageUrl}
                     alt={`${title} Product Hunt`}
                     width={250}
                     height={54}
@@ -292,7 +317,7 @@ export default function Projects() {
             </div>
 
             <div className="space-y-4">
-              {product_hunt.screenshots?.map((url, i) => (
+              {productHunt.screenshots?.map((url, i) => (
                 <div
                   key={i}
                   className="w-full rounded-lg overflow-hidden relative h-[360px] shadow-lg border"
@@ -311,7 +336,7 @@ export default function Projects() {
         )}
       </div>
       <div className="text-center py-6 quicksand-regular text-xs">
-        Made with love ❤️
+        {t('footer.madeWithLove')}
       </div>
     </>
   );

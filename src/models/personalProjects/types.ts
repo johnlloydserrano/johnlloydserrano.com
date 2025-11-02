@@ -4,6 +4,13 @@ export interface PersonalProject {
   slug: string;
   imageUrl: string;
   description: string;
+  productHunt?: {
+    title?: string;
+    position?: string;
+    totalLaunches?: string;
+    launchDate?: string;
+    logoUrl: string;
+  };
 }
 
 export type PersonalProjectSchema = {
@@ -11,6 +18,13 @@ export type PersonalProjectSchema = {
   slug: string | null;
   imageUrl: string | null;
   description: string | null;
+  productHunt?: {
+    title: string | null;
+    position: string | null;
+    totalLaunches: string | null;
+    launchDate: string | null;
+    logoUrl: string | null;
+  } | null;
   readonly id: string;
   readonly createdAt: string;
   readonly updatedAt: string;

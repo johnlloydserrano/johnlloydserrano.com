@@ -15,6 +15,7 @@
   "getStarted": "Get Started",
   "privacyPolicy": "Privacy Policy",
   "viewGithubSource": "View Source on GitHub",
+  "backToHome": "Back to Home",
   "sectionTitles": {
     "myEducation": "My Education",
     "myWorkExperience": "My Work Eperience",
@@ -53,6 +54,30 @@
   },
   "footer": {
     "title": "Ready to bring your ideas to life?",
-    "description": "Let’s build something amazing together."
+    "description": "Let’s build something amazing together.",
+    "madeWithLove": "Made with love ❤️"
+  },
+  "productHunt": {
+    "position": "Position",
+    "outOf": "out of",
+    "launchedOn": "Launched on"
+  },
+  "projectDetails": {
+    "objectives": "Objectives",
+    "keyFeatures": "Key Features",
+    "techStack": "Tech Stack",
+    "infrastructureDiagram": "Infrastructure Diagram",
+    "designAndUserExperience": "Design & User Experience",
+    "futureImprovements": "Future Improvements",
+    "outcomesAndLearnings": "Outcomes & Learnings",
+    "sourceCode": "Source Code",
+    "conclusion": "Conclusion",
+    "productHuntLaunch": "Product Hunt Launch"
+  },
+  "errors": {
+    "goBackHome": "Go back Home",
+    "404NotFound": "The page you’re looking for does not exist.",
+    "queryError": "Something went wrong. Please try again later.",
+    "projectNotFound": "Sorry, we couldn’t find that project."
   }
 }

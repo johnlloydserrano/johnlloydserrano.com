@@ -15,6 +15,15 @@ const transformPersonalProjectResponse = (
   slug: project.slug ?? '',
   imageUrl: project.imageUrl ?? '',
   description: project.description ?? '',
+  productHunt: project.productHunt
+    ? {
+        title: project.productHunt.title ?? '',
+        position: project.productHunt.position ?? '',
+        totalLaunches: project.productHunt.totalLaunches ?? '',
+        launchDate: project.productHunt.launchDate ?? '',
+        logoUrl: project.productHunt.logoUrl ?? '',
+      }
+    : undefined,
 });
 
 const fetchPersonalProject = async (): Promise<PersonalProject[]> => {
