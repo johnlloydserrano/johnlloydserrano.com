@@ -8,6 +8,7 @@ import {
   serviceData,
   skillData,
   workExperienceData,
+  achievementsData,
 } from '@/app/data/data';
 import {
   AchievementSection,
@@ -17,14 +18,11 @@ import {
   PersonalProjectSection,
   ServiceSection,
   SkillSection,
-  useAchievement,
 } from '../components/Sections';
 import Header from '@/app/components/layout/Header';
 import Footer from '@/app/components/layout/Footer';
 
 export default function Home() {
-  const { achievements, isLoading: isLoadingAchievements } = useAchievement();
-
   return (
     <div className="page-wrapper">
       <Header sectionData={sectionData} />
@@ -40,8 +38,8 @@ export default function Home() {
         isLoading={false}
       />
       <AchievementSection
-        achievementData={achievements}
-        isLoading={isLoadingAchievements}
+        achievementData={achievementsData}
+        isLoading={false}
       />
       <ContactSection />
       <Footer />

@@ -31,7 +31,6 @@ export const CardListGrids = ({
         const card = (
           <div className="relative group">
             <Card
-              key={index}
               className={`rounded-md border border-foreground/10 shadow-none ${
                 withDescription
                   ? 'bg-white hover:border-primary'
@@ -116,13 +115,13 @@ export const CardListGrids = ({
         return withLink && item.slug && linkRoute ? (
           <Link
             href={linkRoute(item.slug)}
-            key={index}
+            key={item.slug || index}
             className="rounded-md hover:opacity-90 transition"
           >
             {card}
           </Link>
         ) : (
-          card
+          <div key={item.name || index}>{card}</div>
         );
       })}
     </div>
