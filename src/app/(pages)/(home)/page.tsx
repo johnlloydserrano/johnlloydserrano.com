@@ -3,6 +3,7 @@
 import {
   educationData,
   heroData,
+  personalProjectsData,
   sectionData,
   serviceData,
   skillData,
@@ -17,14 +18,11 @@ import {
   ServiceSection,
   SkillSection,
   useAchievement,
-  usePersonalProject,
 } from '../components/Sections';
 import Header from '@/app/components/layout/Header';
 import Footer from '@/app/components/layout/Footer';
 
 export default function Home() {
-  const { personalProjects, isLoading: isLoadingPersonalProjects } =
-    usePersonalProject();
   const { achievements, isLoading: isLoadingAchievements } = useAchievement();
 
   return (
@@ -38,8 +36,8 @@ export default function Home() {
       <SkillSection skillData={skillData} isLoading={false} />
       <ServiceSection serviceData={serviceData} />
       <PersonalProjectSection
-        personalProjectData={personalProjects}
-        isLoading={isLoadingPersonalProjects}
+        personalProjectData={personalProjectsData}
+        isLoading={false}
       />
       <AchievementSection
         achievementData={achievements}

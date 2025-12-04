@@ -1,6 +1,8 @@
 import { Education } from '@/models/educations/types';
 import { Hero } from '@/models/heroes/types';
+import { PersonalProject } from '@/models/personalProjects/types';
 import { PrivacyPolicy } from '@/models/privacyPolicies/types';
+import { ProjectDetail } from '@/models/projects/types';
 import { Section } from '@/models/sections/types';
 import { Service } from '@/models/services/types';
 import { Skill } from '@/models/skills/types';
@@ -356,5 +358,59 @@ export const skillData: Skill[] = [
     name: 'JIRA',
     imageUrl:
       'https://cloudfront.johnlloydserrano.com/public/images/static/logomark-jira-lg.png',
+  },
+];
+
+export const personalProjectsData: PersonalProject[] = [
+  {
+    id: '35db5cf9-1372-482d-a5f8-d0bb068dbae5',
+    name: 'Portfolio Website',
+    slug: 'portfolio-website',
+    imageUrl: 'https://cloudfront.johnlloydserrano.com/public/images/static/personal-portfolio-website-banner.svg',
+    description: 'A project created to highlight professional experience, skills, and a selection of work. The project is designed with a clean, responsive layout, ensuring that it presents work in an organized, accessible, and visually appealing manner.',
+    productHunt: { "title": "Product Hunt", "position": "#32", "totalLaunches": "200+ launches", "launchDate": "October 31, 2025", "logoUrl": "https://cloudfront.johnlloydserrano.com/public/images/official-logo/product-hunt-logo-icon.webp" }, // You'll need to provide the actual productHunt object structure
+  },
+]
+
+export const projectDetailsData: ProjectDetail[] = [
+  {
+    id: 'c6e164fc-5f03-499a-8d4e-b1eb3cdd8188',
+    slug: 'portfolio-website',
+    title: 'Personal Portfolio Website',
+    overview: 'This project is a fully responsive and modern personal portfolio website built with Next.js 14 (App Router) and TypeScript. It showcases my background, skills, services, experience, and achievements as a web developer through a clean and minimal design. The website serves as both an interactive resume and a live demonstration of my technical abilities, emphasizing performance, scalability, and security.',
+    objectives: [
+      'Create a professional digital space that represents my skills and experience.',
+      'Build a maintainable, production-grade web application using modern technologies.',
+      'Deploy a secure, scalable infrastructure using AWS services and custom domain integration.'
+    ],
+    keyFeatures: [
+      'Fully responsive and adaptive layout optimized for all screen sizes.',
+      'Smooth animations and page transitions powered by Framer Motion.',
+      'Contact form with React Hook Form and Zod validation.',
+      'Modular and reusable component architecture built with shadcn/ui and Tailwind CSS.',
+      'Dedicated sections for Education, Experience, Skills, Services, Projects, Achievements, and Contact.',
+      'Scored 95% in LightSpeed performance benchmark.',
+      'Optimized for SEO, accessibility, and performance using Next.js'
+    ],
+    techStack: [
+      'Frontend: Next.js 14, TypeScript, Tailwind CSS',
+      'UI & Animations: shadcn/ui, Framer Motion',
+      'Forms & Validation: React Hook Form, Zod',
+      'Backend & Hosting: AWS Amplify',
+      'Database: AWS DynamoDB',
+      'Email Service: AWS Simple Email Service (SES)',
+      'Version Control: Git, GitHub'
+    ],
+    outcomes: 'Through this project, I gained extensive hands-on experience with Next.js 14, TypeScript, and AWS architecture, deepening my understanding of how modern frameworks and cloud services work together to build scalable applications. I also developed a stronger grasp of cloud infrastructure, DNS management, SSL configuration, and CI/CD deployment pipelines, allowing me to confidently manage end-to-end deployment workflows. This project further enhanced my skills in responsive web design, animation performance, and backend integration, ensuring the site performs smoothly across all devices. Ultimately, it resulted in a professional, fast, and secure website that not only represents my technical identity but also serves as a living example of my development standards and attention to detail.',
+    design: 'Designed with simplicity and clarity in mind, focusing on intuitive navigation, strong visual hierarchy, and a minimal, distraction-free layout. The user interface was carefully structured to highlight key information such as projects and experience while maintaining a cohesive visual identity. Prototypes and wireframes were created in Figma to define the structure and flow before development, ensuring a consistent and engaging user experience across devices.',
+    improvements: [
+      'Build a blog section to share insights and tutorials.',
+      'Introduce a testimonials section to showcase client or collaborator feedback.',
+      'Add printable or downloadable resume and skill sheets'
+    ],
+    conclusion: 'This project represents not only my technical growth but also my personal standard for building clean, performant, and maintainable applications. It continues to evolve as I learn and adopt new technologies, serving as both a personal brand and a foundation for future experiments and improvements.',
+    images: {"banner":"https://cloudfront.johnlloydserrano.com/public/images/static/personal-portfolio-website-banner.svg","diagram":"https://cloudfront.johnlloydserrano.com/public/images/static/structure-diagram.png"},
+    repository: 'https://github.com/johnlloydserrano/johnlloydserrano.com',
+    productHunt: {"description":"This was my first public portfolio launch on Product Hunt, sharing my work and journey as a web developer. I am amazed by the support from the developer community, who took the time to explore my portfolio and leave feedback even though it is not a full product. The experience has been encouraging and motivating, showing me that personal projects can be noticed and appreciated.","position":"#32","totalLaunches":"200+ launches","launchDate":"October 31, 2025","embedImageUrl":"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1032511&theme=light&t=1761873028499","screenshots":["https://cloudfront.johnlloydserrano.com/public/images/static/product-hunt-portfolio-1.png","https://cloudfront.johnlloydserrano.com/public/images/static/product-hunt-portfolio-2.png"],"link":"https://www.producthunt.com/products/john-lloyd-serrano?embed=true&utm_source=badge-featured&utm_medium=badge&utm_source=badge-john-lloyd-serrano-2"},
   },
 ];
