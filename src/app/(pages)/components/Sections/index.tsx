@@ -7,4 +7,3 @@ export { default as PersonalProjectSection } from './PersonalProject';
 export { default as usePersonalProject } from './PersonalProject/usePersonalProject';
 export { default as ServiceSection } from './Service';
 export { default as SkillSection } from './Skill';
-export { default as useSkill } from './Skill/useSkill';
