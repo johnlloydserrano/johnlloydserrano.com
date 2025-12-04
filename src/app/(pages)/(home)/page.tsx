@@ -3,9 +3,12 @@
 import {
   educationData,
   heroData,
+  personalProjectsData,
   sectionData,
   serviceData,
+  skillData,
   workExperienceData,
+  achievementsData,
 } from '@/app/data/data';
 import {
   AchievementSection,
@@ -15,19 +18,11 @@ import {
   PersonalProjectSection,
   ServiceSection,
   SkillSection,
-  useAchievement,
-  usePersonalProject,
-  useSkill,
 } from '../components/Sections';
 import Header from '@/app/components/layout/Header';
 import Footer from '@/app/components/layout/Footer';
 
 export default function Home() {
-  const { skills, isLoading: isLoadingSkills } = useSkill();
-  const { personalProjects, isLoading: isLoadingPersonalProjects } =
-    usePersonalProject();
-  const { achievements, isLoading: isLoadingAchievements } = useAchievement();
-
   return (
     <div className="page-wrapper">
       <Header sectionData={sectionData} />
@@ -36,15 +31,15 @@ export default function Home() {
         educationData={educationData}
         workExperienceData={workExperienceData}
       />
-      <SkillSection skillData={skills} isLoading={isLoadingSkills} />
+      <SkillSection skillData={skillData} isLoading={false} />
       <ServiceSection serviceData={serviceData} />
       <PersonalProjectSection
-        personalProjectData={personalProjects}
-        isLoading={isLoadingPersonalProjects}
+        personalProjectData={personalProjectsData}
+        isLoading={false}
       />
       <AchievementSection
-        achievementData={achievements}
-        isLoading={isLoadingAchievements}
+        achievementData={achievementsData}
+        isLoading={false}
       />
       <ContactSection />
       <Footer />
